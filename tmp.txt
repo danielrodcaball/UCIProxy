@@ -1,0 +1,996 @@
+ACTIVITY MANAGER RUNNING PROCESSES (dumpsys activity processes)
+  All known processes:
+  *APP* UID 10001 ProcessRecord{a506b288 2112:com.android.providers.calendar/u0a1}
+    user #0 uid=10001
+    dir=/system/priv-app/CalendarProvider.apk publicDir=/system/priv-app/CalendarProvider.apk data=/data/user/0/com.android.providers.calendar
+    packageList={com.android.providers.calendar}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a5829558
+    pid=2112 starting=false
+    lastActivityTime=-57s805ms lastPssTime=-27s372ms nextPssTime=+29m32s375ms
+    adjSeq=1776 lruSeq=0 lastPss=3978 lastCachedPss=3978
+    keeping=false cached=true empty=true
+    serviceb=true serviceHighRam=false
+    oom: max=16 curRaw=9 setRaw=9 cur=9 set=9
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-57s797ms
+    lastWakeTime=31 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m36s983ms lastLowMemory=-1m36s983ms reportLowMemory=false
+    Published Providers:
+      - com.android.providers.calendar.CalendarProvider2
+        -> ContentProviderRecord{a536a548 u0 com.android.providers.calendar/.CalendarProvider2}
+    Receivers:
+      - ReceiverList{a551fb30 2112 com.android.providers.calendar/10001/u0 remote:a5535950}
+      - ReceiverList{a5534450 2112 com.android.providers.calendar/10001/u0 remote:a55ac078}
+  *APP* UID 10056 ProcessRecord{a52e1e80 2054:uci.uciproxy/u0a56}
+    user #0 uid=10056
+    dir=/data/app/uci.uciproxy-1.apk publicDir=/data/app/uci.uciproxy-1.apk data=/data/data/uci.uciproxy
+    packageList={uci.uciproxy}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a51191e0
+    pid=2054 starting=false
+    lastActivityTime=-1m48s701ms lastPssTime=-1m37s561ms nextPssTime=-7s29ms
+    adjSeq=1776 lruSeq=0 lastPss=14926 lastCachedPss=0
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=2 setRaw=2 cur=2 set=2
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=0
+    curProcState=3 repProcState=3 pssProcState=2 setProcState=3 lastStateTime=-27s29ms
+    hasShownUi=true pendingUiClean=false hasAboveClient=false
+    setIsForeground=false foregroundServices=true forcingToForeground=null
+    hasStartedServices=true
+    lastRequestedGc=-1m48s702ms lastLowMemory=-1m48s702ms reportLowMemory=false
+    Activities:
+      - ActivityRecord{a52aedf0 u0 uci.uciproxy/.ui.ui.UCIntlmDialog t4}
+    Services:
+      - ServiceRecord{a540a7b8 u0 uci.uciproxy/.service.service.NTLMProxyService}
+      - ServiceRecord{a566cf08 u0 uci.uciproxy/.ui.ui.QuotaHeadService}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->2054:uci.uciproxy/u0a56 s1/1 u0/0 +1m33s233ms
+    Receivers:
+      - ReceiverList{a5309258 2054 uci.uciproxy/10056/u0 remote:a5620ab8}
+      - ReceiverList{a53bb2f0 2054 uci.uciproxy/10056/u0 remote:a5121308}
+  *APP* UID 10009 ProcessRecord{a54ee890 1680:com.android.launcher/u0a9}
+    user #0 uid=10009
+    class=com.android.launcher2.LauncherApplication
+    dir=/system/priv-app/Launcher2.apk publicDir=/system/priv-app/Launcher2.apk data=/data/user/0/com.android.launcher
+    packageList={com.android.launcher}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a52d2eb0
+    pid=1680 starting=false
+    lastActivityTime=-28s196ms lastPssTime=-1m18s666ms nextPssTime=+9s192ms
+    adjSeq=1776 lruSeq=0 lastPss=34818 lastCachedPss=34818
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=6 setRaw=6 cur=6 set=6
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=9 repProcState=9 pssProcState=9 setProcState=9 lastStateTime=-20s808ms
+    hasShownUi=true pendingUiClean=false hasAboveClient=false
+    lastRequestedGc=-2m1s27ms lastLowMemory=-2m1s27ms reportLowMemory=false
+    Activities:
+      - ActivityRecord{a52b2878 u0 com.android.launcher/com.android.launcher2.Launcher t3}
+    Published Providers:
+      - com.android.launcher2.LauncherProvider
+        -> ContentProviderRecord{a55dee50 u0 com.android.launcher/com.android.launcher2.LauncherProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1680:com.android.launcher/u0a9 s0/0 u1/1 +1m58s146ms
+    Receivers:
+      - ReceiverList{a506c3f8 1680 com.android.launcher/10009/u0 remote:a5426858}
+      - ReceiverList{a52adf78 1680 com.android.launcher/10009/u0 remote:a5308358}
+      - ReceiverList{a52f8b20 1680 com.android.launcher/10009/u0 remote:a58bed50}
+      - ReceiverList{a5429488 1680 com.android.launcher/10009/u0 remote:a53082f8}
+  *APP* UID 10006 ProcessRecord{a52aa268 1705:com.android.externalstorage/u0a6}
+    user #0 uid=10006
+    dir=/system/priv-app/ExternalStorageProvider.apk publicDir=/system/priv-app/ExternalStorageProvider.apk data=/data/data/com.android.externalstorage
+    packageList={com.android.externalstorage}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a53768f0
+    pid=1705 starting=false
+    lastActivityTime=-2m0s633ms lastPssTime=-1m29s157ms nextPssTime=+28m30s837ms
+    adjSeq=1776 lruSeq=0 lastPss=2210 lastCachedPss=2210
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-2m0s633ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-2m0s633ms lastLowMemory=-2m0s633ms reportLowMemory=false
+    Published Providers:
+      - com.android.externalstorage.ExternalStorageProvider
+        -> ContentProviderRecord{a586f5f0 u0 com.android.externalstorage/.ExternalStorageProvider}
+  *APP* UID 10044 ProcessRecord{a54400d8 3005:com.android.quicksearchbox/u0a44}
+    user #0 uid=10044
+    class=com.android.quicksearchbox.QsbApplicationWrapper
+    dir=/system/app/QuickSearchBox.apk publicDir=/system/app/QuickSearchBox.apk data=/data/user/0/com.android.quicksearchbox
+    packageList={com.android.quicksearchbox}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a534f200
+    pid=3005 starting=false
+    lastActivityTime=-10s790ms lastPssTime=-11s509ms nextPssTime=-790ms
+    adjSeq=1777 lruSeq=0 lastPss=0 lastCachedPss=0
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=0 setRaw=0 cur=0 set=0
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=0
+    curProcState=2 repProcState=2 pssProcState=-1 setProcState=2 lastStateTime=-10s790ms
+    lastRequestedGc=-10s790ms lastLowMemory=-10s790ms reportLowMemory=false
+    Published Providers:
+      - com.android.quicksearchbox.google.GoogleSuggestionProvider
+        -> ContentProviderRecord{a55d45b8 u0 com.android.quicksearchbox/.google.GoogleSuggestionProvider}
+  *APP* UID 10015 ProcessRecord{a53f58c0 2814:com.android.browser/u0a15}
+    user #0 uid=10015
+    class=com.android.browser.Browser
+    dir=/system/app/Browser.apk publicDir=/system/app/Browser.apk data=/data/data/com.android.browser
+    packageList={com.android.browser}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a511c150
+    pid=2814 starting=false
+    lastActivityTime=-20s810ms lastPssTime=-10s720ms nextPssTime=+1m49s210ms
+    adjSeq=1777 lruSeq=0 lastPss=29832 lastCachedPss=0
+    keeping=true cached=false empty=false
+    oom: max=16 curRaw=0 setRaw=0 cur=0 set=0
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=0
+    curProcState=2 repProcState=2 pssProcState=2 setProcState=2 lastStateTime=-20s809ms
+    hasShownUi=true pendingUiClean=true hasAboveClient=false
+    hasClientActivities=false foregroundActivities=true
+    lastRequestedGc=-20s811ms lastLowMemory=-20s811ms reportLowMemory=false
+    Activities:
+      - ActivityRecord{a51175b0 u0 com.android.browser/.BrowserActivity t5}
+    Published Providers:
+      - com.android.browser.homepages.HomeProvider
+        -> ContentProviderRecord{a53e9450 u0 com.android.browser/.homepages.HomeProvider}
+      - com.android.browser.provider.BrowserProvider2
+        -> ContentProviderRecord{a53e90e0 u0 com.android.browser/.provider.BrowserProvider2}
+      - com.android.browser.provider.SnapshotProvider
+        -> ContentProviderRecord{a53e94e8 u0 com.android.browser/.provider.SnapshotProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->2814:com.android.browser/u0a15 s1/1 u0/0 +20s622ms
+      - a55d45b8/com.android.quicksearchbox/.google.GoogleSuggestionProvider->2814:com.android.browser/u0a15 s0/0 u1/1 +11s469ms
+    Receivers:
+      - ReceiverList{a552d818 2814 com.android.browser/10015/u0 remote:a528a650}
+      - ReceiverList{a58210d8 2814 com.android.browser/10015/u0 remote:a566e978}
+  *APP* UID 10007 ProcessRecord{a5456320 1945:com.google.android.gms.wearable/u0a7}
+    user #0 uid=10007
+    class=com.google.android.gms.common.app.GmsApplication
+    manageSpaceActivityName=com.google.android.gms.app.settings.ManageSpaceActivity
+    dir=/system/priv-app/PrebuiltGmsCore.apk publicDir=/system/priv-app/PrebuiltGmsCore.apk data=/data/data/com.google.android.gms
+    packageList={com.google.android.gms}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a545b268
+    pid=1945 starting=false
+    lastActivityTime=-1m18s373ms lastPssTime=-58s281ms nextPssTime=+19m1s712ms
+    adjSeq=1776 lruSeq=0 lastPss=4760 lastCachedPss=0
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=5 setRaw=5 cur=5 set=5
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=7 repProcState=7 pssProcState=7 setProcState=7 lastStateTime=-1m18s426ms
+    hasStartedServices=true
+    lastRequestedGc=-1m52s360ms lastLowMemory=-1m52s360ms reportLowMemory=false
+    Services:
+      - ServiceRecord{a5852700 u0 com.google.android.gms/.wearable.service.WearableService}
+  *APP* UID 10003 ProcessRecord{a52fc2e0 2020:com.android.defcontainer/u0a3}
+    user #0 uid=10003
+    dir=/system/priv-app/DefaultContainerService.apk publicDir=/system/priv-app/DefaultContainerService.apk data=/data/data/com.android.defcontainer
+    packageList={com.android.defcontainer}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a57dcca0
+    pid=2020 starting=false
+    lastActivityTime=-1m40s353ms lastPssTime=-1m7s933ms nextPssTime=+28m52s54ms
+    adjSeq=1776 lruSeq=0 lastPss=2660 lastCachedPss=2660
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m40s352ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m50s420ms lastLowMemory=-1m50s420ms reportLowMemory=false
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->2020:com.android.defcontainer/u0a3 s1/1 u0/0 +1m50s393ms
+  *PERS* UID 1000 ProcessRecord{a5306788 1275:system/1000}
+    user #0 uid=1000
+    dir=/system/framework/framework-res.apk publicDir=/system/framework/framework-res.apk data=/data/system
+    packageList={android, com.android.providers.settings, com.android.location.fused}
+    compat=null
+    thread=android.app.ActivityThread$ApplicationThread@a50520f0
+    pid=1275 starting=false
+    lastActivityTime=-20s624ms lastPssTime=-10s719ms nextPssTime=+14m49s203ms
+    adjSeq=1778 lruSeq=0 lastPss=26843 lastCachedPss=0
+    keeping=true cached=false empty=false
+    oom: max=-16 curRaw=-16 setRaw=-16 cur=-16 set=-16
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=0
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-2m12s493ms
+    persistent=true removed=false
+    lastRequestedGc=-- lastLowMemory=-- reportLowMemory=false
+    Services:
+      - ServiceRecord{a5505fb0 u0 android/.hardware.location.GeofenceHardwareService}
+      - ServiceRecord{a582e080 u0 android/com.android.internal.backup.LocalTransportService}
+    Connections:
+      - ConnectionRecord{a507f9e0 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.network.NetworkLocationService:@a5385fa0}
+      - ConnectionRecord{a5121a80 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.geocode.GeocodeService:@a52e3c68}
+      - ConnectionRecord{a53236a0 u0 CR com.google.android.inputmethod.latin/com.android.inputmethod.latin.spellcheck.AndroidSpellCheckerService:@a52acc00}
+      - ConnectionRecord{a5353380 u0 CR UI !VIS com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME:@a5530590}
+      - ConnectionRecord{a537df00 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService:@a5667980}
+      - ConnectionRecord{a5384c38 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.fused.service.FusedProviderService:@a53278d0}
+      - ConnectionRecord{a53a1d08 u0 CR com.android.keyguard/.KeyguardService:@a5509f98}
+      - ConnectionRecord{a544ffc8 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.fused.FusedLocationService:@a519b770}
+      - ConnectionRecord{a54e5160 u0 CR UI com.android.systemui/.ImageWallpaper:@a5394eb8}
+      - ConnectionRecord{a5506380 u0 CR android/.hardware.location.GeofenceHardwareService:@a5505bb0}
+      - ConnectionRecord{a582e920 u0 CR android/com.android.internal.backup.LocalTransportService:@a5448e10}
+    Published Providers:
+      - com.android.providers.settings.SettingsProvider
+        -> ContentProviderRecord{a589fad8 u0 com.android.providers.settings/.SettingsProvider}
+    Receivers:
+      - ReceiverList{a500a7f0 1275 system/1000/u0 local:a500a658}
+      - ReceiverList{a500ad00 1275 system/1000/u0 local:a500ab68}
+      - ReceiverList{a5035488 1275 system/1000/u0 local:a50bb420}
+      - ReceiverList{a5059c48 1275 system/1000/u0 local:a53b52a0}
+      - ReceiverList{a5294280 1275 system/1000/u0 local:a529d160}
+      - ReceiverList{a5299d60 1275 system/1000/u0 local:a529de68}
+      - ReceiverList{a52b2bb8 1275 system/1000/u0 local:a52b2a10}
+      - ReceiverList{a52df580 1275 system/1000/u-1 local:a52df3b8}
+      - ReceiverList{a52ebe98 1275 system/1000/u0 local:a52ebd00}
+      - ReceiverList{a52ed590 1275 system/1000/u0 local:a52ed408}
+      - ReceiverList{a52edac0 1275 system/1000/u0 local:a52ed938}
+      - ReceiverList{a52edfe0 1275 system/1000/u0 local:a52ede58}
+      - ReceiverList{a5326030 1275 system/1000/u0 local:a53455d0}
+      - ReceiverList{a53265b0 1275 system/1000/u0 local:a58b0460}
+      - ReceiverList{a5330698 1275 system/1000/u0 local:a544acb8}
+      - ReceiverList{a5341f00 1275 system/1000/u0 local:a53b62b0}
+      - ReceiverList{a5348168 1275 system/1000/u-1 local:a5347f90}
+      - ReceiverList{a534e118 1275 system/1000/u-1 local:a53fb328}
+      - ReceiverList{a5373580 1275 system/1000/u-1 local:a53733a8}
+      - ReceiverList{a538b120 1275 system/1000/u-1 local:a54dbbf8}
+      - ReceiverList{a538b450 1275 system/1000/u-1 local:a538b278}
+      - ReceiverList{a538c670 1275 system/1000/u0 local:a5392d70}
+      - ReceiverList{a538cbe8 1275 system/1000/u0 local:a538ca40}
+      - ReceiverList{a5391408 1275 system/1000/u-1 local:a53f9c00}
+      - ReceiverList{a5393160 1275 system/1000/u-1 local:a53e1760}
+      - ReceiverList{a5399ef0 1275 system/1000/u0 local:a53d7960}
+      - ReceiverList{a53b6270 1275 system/1000/u0 local:a50359b0}
+      - ReceiverList{a53f8b60 1275 system/1000/u0 local:a53de510}
+      - ReceiverList{a5415d50 1275 system/1000/u-1 local:a5415b98}
+      - ReceiverList{a54160a0 1275 system/1000/u-1 local:a5415ed8}
+      - ReceiverList{a541bf30 1275 system/1000/u-1 local:a541bd98}
+      - ReceiverList{a541e918 1275 system/1000/u-1 local:a51a3c10}
+      - ReceiverList{a542f308 1275 system/1000/u-1 local:a542f160}
+      - ReceiverList{a54497b8 1275 system/1000/u-1 local:a5449610}
+      - ReceiverList{a5449e70 1275 system/1000/u-1 local:a5449cd8}
+      - ReceiverList{a544a9d0 1275 system/1000/u0 local:a5655128}
+      - ReceiverList{a5453ac8 1275 system/1000/u0 local:a55be7e8}
+      - ReceiverList{a54549d0 1275 system/1000/u-1 local:a5454838}
+      - ReceiverList{a549f4b0 1275 system/1000/u0 local:a52ec080}
+      - ReceiverList{a54a2090 1275 system/1000/u0 local:a559c4f8}
+      - ReceiverList{a54a2198 1275 system/1000/u0 local:a5461460}
+      - ReceiverList{a54b28d0 1275 system/1000/u0 local:a54ba798}
+      - ReceiverList{a54be4c8 1275 system/1000/u0 local:a58615a8}
+      - ReceiverList{a54c07e0 1275 system/1000/u-1 local:a52f9250}
+      - ReceiverList{a54c2040 1275 system/1000/u0 local:a54f5180}
+      - ReceiverList{a54c64c8 1275 system/1000/u-1 local:a52ddf88}
+      - ReceiverList{a54ca0a0 1275 system/1000/u0 local:a54fb868}
+      - ReceiverList{a54ca988 1275 system/1000/u0 local:a5303958}
+      - ReceiverList{a54dd0c0 1275 system/1000/u-1 local:a54dcef8}
+      - ReceiverList{a54dd420 1275 system/1000/u-1 local:a54dd248}
+      - ReceiverList{a54e1fe0 1275 system/1000/u0 local:a5418b00}
+      - ReceiverList{a54eec68 1275 system/1000/u-1 local:a54eeaa0}
+      - ReceiverList{a54f5140 1275 system/1000/u0 local:a54c5ed8}
+      - ReceiverList{a54fae78 1275 system/1000/u0 local:a5514d98}
+      - ReceiverList{a54fe3c0 1275 system/1000/u-1 local:a54fe238}
+      - ReceiverList{a54fed08 1275 system/1000/u0 local:a5511580}
+      - ReceiverList{a5515a18 1275 system/1000/u0 local:a54c5c78}
+      - ReceiverList{a5573768 1275 system/1000/u0 local:a5584068}
+      - ReceiverList{a5577508 1275 system/1000/u-1 local:a55a97c8}
+      - ReceiverList{a557d0c0 1275 system/1000/u0 local:a5895ab8}
+      - ReceiverList{a558c218 1275 system/1000/u0 local:a54c0d90}
+      - ReceiverList{a5592788 1275 system/1000/u0 local:a5592600}
+      - ReceiverList{a5592be0 1275 system/1000/u0 local:a5592a58}
+      - ReceiverList{a5595670 1275 system/1000/u0 local:a5520e48}
+      - ReceiverList{a55a2e88 1275 system/1000/u0 local:a55a2d00}
+      - ReceiverList{a55a3300 1275 system/1000/u0 local:a55a3178}
+      - ReceiverList{a55a3758 1275 system/1000/u0 local:a55a35d0}
+      - ReceiverList{a55af4b8 1275 system/1000/u0 local:a55b90c0}
+      - ReceiverList{a55b02b0 1275 system/1000/u0 local:a54fabe8}
+      - ReceiverList{a55bb568 1275 system/1000/u-1 local:a55bb4e0}
+      - ReceiverList{a55bc710 1275 system/1000/u-1 local:a53f9438}
+      - ReceiverList{a55c2410 1275 system/1000/u-1 local:a53ff890}
+      - ReceiverList{a55c8818 1275 system/1000/u-1 local:a55bec60}
+      - ReceiverList{a55d4ce0 1275 system/1000/u0 local:a55ce038}
+      - ReceiverList{a55d7988 1275 system/1000/u0 local:a58bad50}
+      - ReceiverList{a55daf68 1275 system/1000/u0 local:a562ed28}
+      - ReceiverList{a5617bf8 1275 system/1000/u0 local:a55d3fe8}
+      - ReceiverList{a56188b8 1275 system/1000/u0 local:a55c3f88}
+      - ReceiverList{a56227a0 1275 system/1000/u0 local:a54a5eb0}
+      - ReceiverList{a56233b8 1275 system/1000/u0 local:a5583d50}
+      - ReceiverList{a5625bc8 1275 system/1000/u0 local:a5343e90}
+      - ReceiverList{a5627308 1275 system/1000/u0 local:a56713d8}
+      - ReceiverList{a5627470 1275 system/1000/u0 local:a51a3310}
+      - ReceiverList{a562b630 1275 system/1000/u0 local:a55b1910}
+      - ReceiverList{a5659558 1275 system/1000/u0 local:a52a33e0}
+      - ReceiverList{a57b73e0 1275 system/1000/u0 local:a5332ab0}
+      - ReceiverList{a57b7630 1275 system/1000/u-1 local:a55c1d98}
+      - ReceiverList{a57bbd28 1275 system/1000/u0 local:a53d8878}
+      - ReceiverList{a57c6918 1275 system/1000/u0 local:a55d8df0}
+      - ReceiverList{a57c7868 1275 system/1000/u0 local:a54adc38}
+      - ReceiverList{a57cea00 1275 system/1000/u0 local:a55cba28}
+      - ReceiverList{a57d16c8 1275 system/1000/u0 local:a53db9d0}
+      - ReceiverList{a57d1c58 1275 system/1000/u-1 local:a5618680}
+      - ReceiverList{a57d3600 1275 system/1000/u0 local:a503cb80}
+      - ReceiverList{a57d6fd8 1275 system/1000/u0 local:a57d9f08}
+      - ReceiverList{a57d7bf0 1275 system/1000/u0 local:a562e1c0}
+      - ReceiverList{a57db188 1275 system/1000/u0 local:a54fcba8}
+      - ReceiverList{a581cee0 1275 system/1000/u0 local:a55781a0}
+      - ReceiverList{a581d080 1275 system/1000/u-1 local:a53dc4d0}
+      - ReceiverList{a5822dd8 1275 system/1000/u0 local:a57d8190}
+      - ReceiverList{a5825e08 1275 system/1000/u0 local:a5854d60}
+      - ReceiverList{a58336b8 1275 system/1000/u0 local:a583a650}
+      - ReceiverList{a583a440 1275 system/1000/u0 local:a57b8c88}
+      - ReceiverList{a583b988 1275 system/1000/u0 local:a57d9c08}
+      - ReceiverList{a5843460 1275 system/1000/u0 local:a5843298}
+      - ReceiverList{a584cd38 1275 system/1000/u0 local:a5834bb8}
+      - ReceiverList{a584dc40 1275 system/1000/u0 local:a5399658}
+      - ReceiverList{a585d390 1275 system/1000/u-1 local:a5865560}
+      - ReceiverList{a58623d8 1275 system/1000/u-1 local:a5862250}
+      - ReceiverList{a5862898 1275 system/1000/u0 local:a58626f0}
+      - ReceiverList{a5862d40 1275 system/1000/u0 local:a5862b98}
+      - ReceiverList{a5863110 1275 system/1000/u0 local:a5862f68}
+      - ReceiverList{a58739a8 1275 system/1000/u0 local:a5821270}
+      - ReceiverList{a5876348 1275 system/1000/u0 local:a5876190}
+      - ReceiverList{a587a6c8 1275 system/1000/u0 local:a58a8880}
+      - ReceiverList{a5880ee8 1275 system/1000/u0 local:a5868d40}
+      - ReceiverList{a5899068 1275 system/1000/u0 local:a584a498}
+      - ReceiverList{a589a610 1275 system/1000/u0 local:a5831040}
+      - ReceiverList{a58a34f0 1275 system/1000/u0 local:a58a3448}
+      - ReceiverList{a58aeaa8 1275 system/1000/u0 local:a57e0488}
+      - ReceiverList{a58bfd60 1275 system/1000/u-1 local:a5317808}
+  *APP* UID 10007 ProcessRecord{a58aa508 1514:com.google.process.location/u0a7}
+    user #0 uid=10007
+    class=com.google.android.gms.common.app.GmsApplication
+    manageSpaceActivityName=com.google.android.gms.app.settings.ManageSpaceActivity
+    dir=/system/priv-app/PrebuiltGmsCore.apk publicDir=/system/priv-app/PrebuiltGmsCore.apk data=/data/data/com.google.android.gms
+    packageList={com.google.android.gms}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a55acb60
+    pid=1514 starting=false
+    lastActivityTime=-27s388ms lastPssTime=-1m46s678ms nextPssTime=+13m13s290ms
+    adjSeq=1776 lruSeq=0 lastPss=11296 lastCachedPss=0
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=4 repProcState=4 pssProcState=4 setProcState=4 lastStateTime=-2m7s172ms
+    hasStartedServices=true
+    lastRequestedGc=-2m7s172ms lastLowMemory=-2m7s172ms reportLowMemory=false
+    Services:
+      - ServiceRecord{a50689e8 u0 com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService}
+      - ServiceRecord{a507f4c0 u0 com.google.android.gms/com.google.android.location.network.NetworkLocationService}
+      - ServiceRecord{a530d198 u0 com.google.android.gms/com.google.android.location.reporting.service.PreferenceService}
+      - ServiceRecord{a534e950 u0 com.google.android.gms/com.google.android.location.fused.service.FusedProviderService}
+      - ServiceRecord{a538e280 u0 com.google.android.gms/com.google.android.location.fused.FusedLocationService}
+      - ServiceRecord{a5415498 u0 com.google.android.gms/com.google.android.location.geocode.GeocodeService}
+      - ServiceRecord{a544b5b8 u0 com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService}
+      - ServiceRecord{a545a748 u0 com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService}
+      - ServiceRecord{a582f0d8 u0 com.google.android.gms/com.google.android.location.fused.NlpLocationReceiverService}
+      - ServiceRecord{a5887438 u0 com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService}
+      - ServiceRecord{a58b18b0 u0 com.google.android.gms/com.google.android.location.reporting.service.DispatchingService}
+    Connections:
+      - ConnectionRecord{a511f3d0 u0 CR ACT com.google.android.gms/.analytics.service.AnalyticsService:@a511e620}
+      - ConnectionRecord{a52f7b28 u0 CR ACT com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService:@a54e9ad8}
+      - ConnectionRecord{a53683b8 u0 CR ACT com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService:@a54706b0}
+      - ConnectionRecord{a55e4680 u0 CR ACT com.google.android.gms/com.google.android.location.reporting.service.PreferenceService:@a52d5108}
+    Published Providers:
+      - com.google.android.gms.fitness.sync.FitnessContentProvider
+        -> ContentProviderRecord{a5309860 u0 com.google.android.gms/.fitness.sync.FitnessContentProvider}
+      - com.google.android.location.reporting.service.ReportingContentProvider
+        -> ContentProviderRecord{a58b5ff0 u0 com.google.android.gms/com.google.android.location.reporting.service.ReportingContentProvider}
+      - com.google.android.location.internal.LocationContentProvider
+        -> ContentProviderRecord{a53097c8 u0 com.google.android.gms/com.google.android.location.internal.LocationContentProvider}
+      - com.google.android.location.copresence.settings.CopresenceContentProvider
+        -> ContentProviderRecord{a53098f8 u0 com.google.android.gms/com.google.android.location.copresence.settings.CopresenceContentProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1514:com.google.process.location/u0a7 s1/1 u0/0 +1m53s675ms
+    Receivers:
+      - ReceiverList{a500a0b8 1514 com.google.process.location/10007/u0 remote:a55933c0}
+      - ReceiverList{a51a10c8 1514 com.google.process.location/10007/u0 remote:a55efc48}
+      - ReceiverList{a52a59a0 1514 com.google.process.location/10007/u0 remote:a52e5be8}
+      - ReceiverList{a52d6780 1514 com.google.process.location/10007/u0 remote:a52a4a70}
+      - ReceiverList{a52e4390 1514 com.google.process.location/10007/u0 remote:a52fb288}
+      - ReceiverList{a53083c0 1514 com.google.process.location/10007/u0 remote:a52e4f48}
+      - ReceiverList{a53830e0 1514 com.google.process.location/10007/u0 remote:a5042958}
+      - ReceiverList{a541ef28 1514 com.google.process.location/10007/u0 remote:a5287948}
+      - ReceiverList{a5423c78 1514 com.google.process.location/10007/u0 remote:a53e2028}
+      - ReceiverList{a54560e0 1514 com.google.process.location/10007/u0 remote:a5435230}
+      - ReceiverList{a549d178 1514 com.google.process.location/10007/u0 remote:a506f4e8}
+      - ReceiverList{a56222c8 1514 com.google.process.location/10007/u0 remote:a582f8d0}
+      - ReceiverList{a589c230 1514 com.google.process.location/10007/u0 remote:a57c1638}
+      - ReceiverList{a58b9130 1514 com.google.process.location/10007/u0 remote:a589bd10}
+  *APP* UID 10010 ProcessRecord{a52e3770 2214:com.android.mms/u0a10}
+    user #0 uid=10010
+    class=com.android.mms.MmsApp
+    dir=/system/priv-app/Mms.apk publicDir=/system/priv-app/Mms.apk data=/data/data/com.android.mms
+    packageList={com.android.mms}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a53e0d90
+    pid=2214 starting=false
+    lastActivityTime=-58s4ms lastPssTime=-27s386ms nextPssTime=+29m32s355ms
+    adjSeq=1776 lruSeq=0 lastPss=4889 lastCachedPss=4889
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=11 setRaw=11 cur=11 set=11
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-57s971ms
+    lastWakeTime=25 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m34s158ms lastLowMemory=-1m34s158ms reportLowMemory=false
+    Published Providers:
+      - com.android.mms.TempFileProvider
+        -> ContentProviderRecord{a55ac490 u0 com.android.mms/.TempFileProvider}
+      - com.android.mms.SuggestionsProvider
+        -> ContentProviderRecord{a559db60 u0 com.android.mms/.SuggestionsProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->2214:com.android.mms/u0a10 s1/1 u0/0 +1m34s44ms
+    Receivers:
+      - ReceiverList{a5422700 2214 com.android.mms/10010/u0 remote:a542e108}
+      - ReceiverList{a5463a28 2214 com.android.mms/10010/u0 remote:a54a88c8}
+  *APP* UID 10017 ProcessRecord{a55cebc0 2078:com.android.calendar/u0a17}
+    user #0 uid=10017
+    class=com.android.calendar.CalendarApplication
+    dir=/system/app/Calendar.apk publicDir=/system/app/Calendar.apk data=/data/data/com.android.calendar
+    packageList={com.android.calendar}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a5415378
+    pid=2078 starting=false
+    lastActivityTime=-58s275ms lastPssTime=-28s200ms nextPssTime=+29m31s789ms
+    adjSeq=1776 lruSeq=0 lastPss=3997 lastCachedPss=3997
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-58s275ms
+    lastWakeTime=5047 timeUsed=+9ms
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m37s330ms lastLowMemory=-1m37s330ms reportLowMemory=false
+    Published Providers:
+      - com.android.calendar.CalendarRecentSuggestionsProvider
+        -> ContentProviderRecord{a5337fd0 u0 com.android.calendar/.CalendarRecentSuggestionsProvider}
+  *APP* UID 10042 ProcessRecord{a5327330 1575:com.android.printspooler/u0a42}
+    user #0 uid=10042
+    dir=/system/app/PrintSpooler.apk publicDir=/system/app/PrintSpooler.apk data=/data/data/com.android.printspooler
+    packageList={com.android.printspooler}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a54b5370
+    pid=1575 starting=false
+    lastActivityTime=-1m58s120ms lastPssTime=-1m26s891ms nextPssTime=+28m32s973ms
+    adjSeq=1776 lruSeq=0 lastPss=2181 lastCachedPss=2181
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m58s119ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-2m4s480ms lastLowMemory=-2m4s480ms reportLowMemory=false
+  *APP* UID 10007 ProcessRecord{a500be48 1880:com.google.android.gms.ui/u0a7}
+    user #0 uid=10007
+    class=com.google.android.gms.common.app.GmsApplication
+    manageSpaceActivityName=com.google.android.gms.app.settings.ManageSpaceActivity
+    dir=/system/priv-app/PrebuiltGmsCore.apk publicDir=/system/priv-app/PrebuiltGmsCore.apk data=/data/data/com.google.android.gms
+    packageList={com.google.android.gms}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a57dd8e0
+    pid=1880 starting=false
+    lastActivityTime=-1m52s541ms lastPssTime=-1m20s173ms nextPssTime=+28m39s788ms
+    adjSeq=1776 lruSeq=0 lastPss=3173 lastCachedPss=3173
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m53s715ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m53s715ms lastLowMemory=-1m53s715ms reportLowMemory=false
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1880:com.google.android.gms.ui/u0a7 s1/1 u0/0 +1m53s657ms
+  *APP* UID 10004 ProcessRecord{a52b0d08 2162:com.android.dialer/u0a4}
+    user #0 uid=10004
+    class=com.android.dialer.DialerApplication
+    dir=/system/priv-app/Dialer.apk publicDir=/system/priv-app/Dialer.apk data=/data/data/com.android.dialer
+    packageList={com.android.dialer}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a54adf80
+    pid=2162 starting=false
+    lastActivityTime=-1m34s974ms lastPssTime=-1m4s432ms nextPssTime=+28m55s561ms
+    adjSeq=1776 lruSeq=0 lastPss=2837 lastCachedPss=2837
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m34s935ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m35s159ms lastLowMemory=-1m35s159ms reportLowMemory=false
+  *APP* UID 10007 ProcessRecord{a538dcc8 1763:com.google.android.gms/u0a7}
+    user #0 uid=10007
+    class=com.google.android.gms.common.app.GmsApplication
+    manageSpaceActivityName=com.google.android.gms.app.settings.ManageSpaceActivity
+    dir=/system/priv-app/PrebuiltGmsCore.apk publicDir=/system/priv-app/PrebuiltGmsCore.apk data=/data/data/com.google.android.gms
+    packageList={com.google.android.gms}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a53e3d20
+    pid=1763 starting=false
+    lastActivityTime=-27s406ms lastPssTime=-1m20s180ms nextPssTime=+13m39s788ms
+    adjSeq=1776 lruSeq=0 lastPss=14514 lastCachedPss=0
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=4 repProcState=4 pssProcState=4 setProcState=4 lastStateTime=-1m46s715ms
+    hasStartedServices=true
+    lastRequestedGc=-1m58s91ms lastLowMemory=-1m58s91ms reportLowMemory=false
+    Services:
+      - ServiceRecord{a511ed68 u0 com.google.android.gms/.analytics.service.AnalyticsService}
+    Connections:
+      - ConnectionRecord{a55e9b98 u0 CR com.google.android.gms/.gcm.http.GoogleHttpService:@a53935b8}
+    Published Providers:
+      - com.google.android.gms.ads.adinfo.AdvertisingInfoContentProvider
+        -> ContentProviderRecord{a55ab7b0 u0 com.google.android.gms/.ads.adinfo.AdvertisingInfoContentProvider}
+      - com.google.android.gms.games.provider.GamesContentProvider
+        -> ContentProviderRecord{a54ef090 u0 com.google.android.gms/.games.provider.GamesContentProvider}
+      - com.google.android.gms.games.provider.NotificationStubContentProvider
+        -> ContentProviderRecord{a5875bc8 u0 com.google.android.gms/.games.provider.NotificationStubContentProvider}
+      - com.google.android.gms.reminders.provider.RemindersProvider
+        -> ContentProviderRecord{a54ef0f0 u0 com.google.android.gms/.reminders.provider.RemindersProvider}
+      - com.google.android.gms.people.service.PeopleContentProvider
+        -> ContentProviderRecord{a551a9d0 u0 com.google.android.gms/.people.service.PeopleContentProvider}
+      - com.google.android.gms.auth.CredentialStateContentProvider
+        -> ContentProviderRecord{a55ab718 u0 com.google.android.gms/.auth.CredentialStateContentProvider}
+      - com.google.android.gms.icing.proxy.SmsContentProvider
+        -> ContentProviderRecord{a58715d8 u0 com.google.android.gms/.icing.proxy.SmsContentProvider}
+      - com.google.android.gms.plus.provider.PlusProvider
+        -> ContentProviderRecord{a5875b30 u0 com.google.android.gms/.plus.provider.PlusProvider}
+      - com.google.android.gms.appstate.provider.AppStateContentProvider
+        -> ContentProviderRecord{a551aa48 u0 com.google.android.gms/.appstate.provider.AppStateContentProvider}
+      - com.google.android.gms.drive.metadata.sync.syncadapter.DatabaseNotificationContentProvider
+        -> ContentProviderRecord{a55dc398 u0 com.google.android.gms/.drive.metadata.sync.syncadapter.DatabaseNotificationContentProvider}
+      - com.google.android.gms.people.debug.PeopleExportProvider
+        -> ContentProviderRecord{a55dc300 u0 com.google.android.gms/.people.debug.PeopleExportProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1763:com.google.android.gms/u0a7 s1/1 u0/0 +1m52s57ms
+    Receivers:
+      - ReceiverList{a51208c8 1763 com.google.android.gms/10007/u0 remote:a51201e8}
+      - ReceiverList{a51f4fc8 1763 com.google.android.gms/10007/u0 remote:a52b3040}
+      - ReceiverList{a52f1b78 1763 com.google.android.gms/10007/u0 remote:a5883058}
+  *APP* UID 10040 ProcessRecord{a5665330 2304:com.svox.pico/u0a40}
+    user #0 uid=10040
+    dir=/system/app/PicoTts.apk publicDir=/system/app/PicoTts.apk data=/data/data/com.svox.pico
+    packageList={com.svox.pico}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a532ff68
+    pid=2304 starting=false
+    lastActivityTime=-1m18s446ms lastPssTime=-47s828ms nextPssTime=+29m12s15ms
+    adjSeq=1776 lruSeq=0 lastPss=2071 lastCachedPss=2071
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m18s446ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m18s446ms lastLowMemory=-1m18s446ms reportLowMemory=false
+    Published Providers:
+      - com.svox.pico.providers.SettingsProvider
+        -> ContentProviderRecord{a53906e0 u0 com.svox.pico/.providers.SettingsProvider}
+  *APP* UID 1000 ProcessRecord{a54e7420 1564:com.android.settings/1000}
+    user #0 uid=1000
+    dir=/system/priv-app/Settings.apk publicDir=/system/priv-app/Settings.apk data=/data/user/0/com.android.settings
+    packageList={com.android.settings}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a54b95a8
+    pid=1564 starting=false
+    lastActivityTime=-58s225ms lastPssTime=-1m20s184ms nextPssTime=+28m39s780ms
+    adjSeq=1776 lruSeq=0 lastPss=3187 lastCachedPss=3187
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=13 setRaw=13 cur=13 set=13
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m51s711ms
+    hasShownUi=true pendingUiClean=false hasAboveClient=false
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-2m4s907ms lastLowMemory=-2m4s907ms reportLowMemory=false
+    Published Providers:
+      - android.support.v4.content.FileProvider
+        -> ContentProviderRecord{a58b85a8 u0 com.android.settings/android.support.v4.content.FileProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1564:com.android.settings/1000 s1/1 u0/0 +1m53s94ms
+  *APP* UID 10025 ProcessRecord{a5850f30 1782:com.android.email/u0a25}
+    user #0 uid=10025
+    class=com.android.email.EmailApplication
+    dir=/system/app/Email.apk publicDir=/system/app/Email.apk data=/data/user/0/com.android.email
+    packageList={com.android.email}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a542a700
+    pid=1782 starting=false
+    lastActivityTime=-1m18s689ms lastPssTime=-47s810ms nextPssTime=+29m12s15ms
+    adjSeq=1776 lruSeq=0 lastPss=5853 lastCachedPss=5853
+    keeping=false cached=true empty=true
+    serviceb=true serviceHighRam=false
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m18s665ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m55s674ms lastLowMemory=-1m55s674ms reportLowMemory=false
+    Published Providers:
+      - com.android.mail.providers.EmailAccountCacheProvider
+        -> ContentProviderRecord{a5367f20 u0 com.android.email/com.android.mail.providers.EmailAccountCacheProvider}
+      - com.android.mail.providers.EmlAttachmentProvider
+        -> ContentProviderRecord{a5367fb8 u0 com.android.email/com.android.mail.providers.EmlAttachmentProvider}
+      - com.android.mail.browse.EmailConversationProvider
+        -> ContentProviderRecord{a5368050 u0 com.android.email/com.android.mail.browse.EmailConversationProvider}
+      - com.android.email.provider.AttachmentProvider
+        -> ContentProviderRecord{a5875ab0 u0 com.android.email/.provider.AttachmentProvider}
+      - com.android.email.provider.EmailProvider
+        -> ContentProviderRecord{a5850e10 u0 com.android.email/.provider.EmailProvider}
+      - com.android.mail.providers.SuggestionsProvider
+        -> ContentProviderRecord{a5875a18 u0 com.android.email/com.android.mail.providers.SuggestionsProvider}
+  *APP* UID 10035 ProcessRecord{a5367ca8 1922:com.android.music/u0a35}
+    user #0 uid=10035
+    dir=/system/app/Music.apk publicDir=/system/app/Music.apk data=/data/data/com.android.music
+    packageList={com.android.music}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a538f360
+    pid=1922 starting=false
+    lastActivityTime=-1m52s610ms lastPssTime=-21s188ms nextPssTime=+29m38s805ms
+    adjSeq=1776 lruSeq=0 lastPss=2515 lastCachedPss=2515
+    keeping=false cached=true empty=true
+    serviceb=true serviceHighRam=false
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-52s456ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m52s641ms lastLowMemory=-1m52s641ms reportLowMemory=false
+  *PERS* UID 1001 ProcessRecord{a500af58 1549:com.android.phone/1001}
+    user #0 uid=1001
+    class=com.android.phone.PhoneApp
+    dir=/system/priv-app/TeleService.apk publicDir=/system/priv-app/TeleService.apk data=/data/data/com.android.phone
+    packageList={com.android.providers.telephony, com.android.phone}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a54cf338
+    pid=1549 starting=false
+    lastActivityTime=-1m18s583ms lastPssTime=-2m6s968ms nextPssTime=-5s922ms
+    adjSeq=1776 lruSeq=0 lastPss=0 lastCachedPss=0
+    keeping=true cached=false empty=false
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=0
+    curProcState=0 repProcState=0 pssProcState=-1 setProcState=0 lastStateTime=-2m5s922ms
+    persistent=true removed=false
+    lastRequestedGc=-2m5s922ms lastLowMemory=-2m5s922ms reportLowMemory=false
+    Services:
+      - ServiceRecord{a541f190 u0 com.android.phone/.TelephonyDebugService}
+    Published Providers:
+      - com.android.providers.telephony.SmsProvider
+        -> ContentProviderRecord{a52cf1d0 u0 com.android.providers.telephony/.SmsProvider}
+      - com.android.phone.IccProvider
+        -> ContentProviderRecord{a5656d00 u0 com.android.phone/.IccProvider}
+      - com.android.providers.telephony.MmsSmsProvider
+        -> ContentProviderRecord{a52cf268 u0 com.android.providers.telephony/.MmsSmsProvider}
+      - com.android.providers.telephony.MmsProvider
+        -> ContentProviderRecord{a52cf138 u0 com.android.providers.telephony/.MmsProvider}
+      - com.android.providers.telephony.TelephonyProvider
+        -> ContentProviderRecord{a5361ea8 u0 com.android.providers.telephony/.TelephonyProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1549:com.android.phone/1001 s1/1 u0/0 +2m3s657ms
+    Receivers:
+      - ReceiverList{a52cfed0 1549 com.android.phone/1001/u0 remote:a52cfbe0}
+      - ReceiverList{a52d22a8 1549 com.android.phone/1001/u0 remote:a52d2050}
+      - ReceiverList{a53b21a0 1549 com.android.phone/1001/u0 remote:a53e3c00}
+      - ReceiverList{a541ac98 1549 com.android.phone/1001/u0 remote:a530ef90}
+      - ReceiverList{a5432bd0 1549 com.android.phone/1001/u0 remote:a5533158}
+      - ReceiverList{a55ecbd8 1549 com.android.phone/1001/u0 remote:a55ec7e0}
+      - ReceiverList{a565f320 1549 com.android.phone/1001/u0 remote:a54da418}
+      - ReceiverList{a5829568 1549 com.android.phone/1001/u0 remote:a52bf250}
+      - ReceiverList{a58437f8 1549 com.android.phone/1001/u0 remote:a5530138}
+      - ReceiverList{a584bff0 1549 com.android.phone/1001/u0 remote:a5593588}
+      - ReceiverList{a589caf0 1549 com.android.phone/1001/u0 remote:a589c860}
+      - ReceiverList{a58a5228 1549 com.android.phone/1001/u0 remote:a586fc20}
+      - ReceiverList{a58b1050 1549 com.android.phone/1001/u0 remote:a5534320}
+  *APP* UID 10021 ProcessRecord{a52aa698 2099:com.android.deskclock/u0a21}
+    user #0 uid=10021
+    dir=/system/app/DeskClock.apk publicDir=/system/app/DeskClock.apk data=/data/data/com.android.deskclock
+    packageList={com.android.deskclock}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a54d9ff8
+    pid=2099 starting=false
+    lastActivityTime=-57s977ms lastPssTime=-1m4s450ms nextPssTime=+28m55s546ms
+    adjSeq=1776 lruSeq=0 lastPss=3802 lastCachedPss=3802
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=11 setRaw=11 cur=11 set=11
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m37s19ms
+    lastWakeTime=173 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m37s19ms lastLowMemory=-1m37s19ms reportLowMemory=false
+    Published Providers:
+      - com.android.deskclock.provider.ClockProvider
+        -> ContentProviderRecord{a58b13a0 u0 com.android.deskclock/.provider.ClockProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->2099:com.android.deskclock/u0a21 s1/1 u0/0 +1m36s791ms
+  *PERS* UID 10008 ProcessRecord{a53a1f90 1381:com.android.systemui/u0a8}
+    user #0 uid=10008
+    dir=/system/priv-app/Keyguard.apk publicDir=/system/priv-app/Keyguard.apk data=/data/data/com.android.keyguard
+    packageList={com.android.keyguard, com.android.systemui}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a57d1fe0
+    pid=1381 starting=false
+    lastActivityTime=-28s214ms lastPssTime=-2m11s353ms nextPssTime=-6s733ms
+    adjSeq=1776 lruSeq=0 lastPss=0 lastCachedPss=0
+    keeping=true cached=false empty=false
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=0
+    curProcState=0 repProcState=0 pssProcState=-1 setProcState=0 lastStateTime=-2m6s733ms
+    persistent=true removed=false
+    hasStartedServices=true
+    lastRequestedGc=-2m11s27ms lastLowMemory=-2m11s27ms reportLowMemory=false
+    Services:
+      - ServiceRecord{a53a1938 u0 com.android.keyguard/.KeyguardService}
+      - ServiceRecord{a58796c8 u0 com.android.systemui/.ImageWallpaper}
+      - ServiceRecord{a58a40e0 u0 com.android.systemui/.SystemUIService}
+    Connections:
+      - ConnectionRecord{a54fd608 u0 CR com.android.keyguard/.KeyguardService:@a55921a8}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1381:com.android.systemui/u0a8 s1/1 u0/0 +2m10s790ms
+    Receivers:
+      - ReceiverList{a5183348 1381 com.android.systemui/10008/u-1 remote:a55a39b8}
+      - ReceiverList{a5184370 1381 com.android.systemui/10008/u0 remote:a5419658}
+      - ReceiverList{a51f52c8 1381 com.android.systemui/10008/u-1 remote:a52ac5b8}
+      - ReceiverList{a52df9b0 1381 com.android.systemui/10008/u0 remote:a52df820}
+      - ReceiverList{a52e4530 1381 com.android.systemui/10008/u0 remote:a54db870}
+      - ReceiverList{a5308868 1381 com.android.systemui/10008/u0 remote:a58652c0}
+      - ReceiverList{a5312740 1381 com.android.systemui/10008/u0 remote:a5308a88}
+      - ReceiverList{a53130b8 1381 com.android.systemui/10008/u0 remote:a53128f8}
+      - ReceiverList{a53b9a98 1381 com.android.systemui/10008/u0 remote:a5663068}
+      - ReceiverList{a54454a8 1381 com.android.systemui/10008/u0 remote:a53e30e8}
+      - ReceiverList{a54b6330 1381 com.android.systemui/10008/u0 remote:a54b61b0}
+      - ReceiverList{a54b6950 1381 com.android.systemui/10008/u0 remote:a54b64f8}
+      - ReceiverList{a54b6d68 1381 com.android.systemui/10008/u-1 remote:a54b6b58}
+      - ReceiverList{a54db9a0 1381 com.android.systemui/10008/u0 remote:a5357de0}
+      - ReceiverList{a54e46e8 1381 com.android.systemui/10008/u0 remote:a5448780}
+      - ReceiverList{a54e5198 1381 com.android.systemui/10008/u0 remote:a54e4fe8}
+      - ReceiverList{a54e54d0 1381 com.android.systemui/10008/u0 remote:a54e53a8}
+      - ReceiverList{a54efbc8 1381 com.android.systemui/10008/u0 remote:a503e800}
+      - ReceiverList{a55068c8 1381 com.android.systemui/10008/u0 remote:a54208a8}
+      - ReceiverList{a5518be8 1381 com.android.systemui/10008/u0 remote:a5312800}
+      - ReceiverList{a558d510 1381 com.android.systemui/10008/u0 remote:a54e56d8}
+      - ReceiverList{a558df98 1381 com.android.systemui/10008/u-1 remote:a558de10}
+      - ReceiverList{a55938c8 1381 com.android.systemui/10008/u0 remote:a5063470}
+      - ReceiverList{a55de068 1381 com.android.systemui/10008/u0 remote:a55dde80}
+      - ReceiverList{a5656e38 1381 com.android.systemui/10008/u0 remote:a5326c50}
+      - ReceiverList{a581eec0 1381 com.android.systemui/10008/u0 remote:a507b7d8}
+      - ReceiverList{a582fc50 1381 com.android.systemui/10008/u0 remote:a582f978}
+      - ReceiverList{a5830120 1381 com.android.systemui/10008/u0 remote:a582ffa0}
+      - ReceiverList{a5877a38 1381 com.android.systemui/10008/u0 remote:a58484d8}
+  *APP* UID 10026 ProcessRecord{a530e6f8 1721:com.android.exchange/u0a26}
+    user #0 uid=10026
+    class=com.android.exchange.Exchange
+    dir=/system/app/Exchange2.apk publicDir=/system/app/Exchange2.apk data=/data/user/0/com.android.exchange
+    packageList={com.android.exchange}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a5358f00
+    pid=1721 starting=false
+    lastActivityTime=-1m18s700ms lastPssTime=-47s830ms nextPssTime=+29m11s998ms
+    adjSeq=1776 lruSeq=0 lastPss=2902 lastCachedPss=2902
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=15 setRaw=15 cur=15 set=15
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m18s681ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-1m58s189ms lastLowMemory=-1m58s189ms reportLowMemory=false
+    Published Providers:
+      - com.android.exchange.provider.ExchangeDirectoryProvider
+        -> ContentProviderRecord{a530e5a0 u0 com.android.exchange/.provider.ExchangeDirectoryProvider}
+  *APP* UID 10002 ProcessRecord{a54daec8 1535:android.process.acore/u0a2}
+    user #0 uid=10002
+    dir=/system/priv-app/ContactsProvider.apk publicDir=/system/priv-app/ContactsProvider.apk data=/data/user/0/com.android.providers.contacts
+    packageList={com.android.providers.userdictionary, com.android.providers.contacts}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a54d97c0
+    pid=1535 starting=false
+    lastActivityTime=-27s670ms lastPssTime=-47s850ms nextPssTime=+19m11s998ms
+    adjSeq=1776 lruSeq=0 lastPss=5572 lastCachedPss=5572
+    keeping=false cached=true empty=true
+    serviceb=true serviceHighRam=false
+    oom: max=16 curRaw=9 setRaw=9 cur=9 set=9
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-1m18s650ms
+    lastWakeTime=0 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-2m6s743ms lastLowMemory=-2m6s743ms reportLowMemory=false
+    Published Providers:
+      - com.android.providers.contacts.CallLogProvider
+        -> ContentProviderRecord{a5328d50 u0 com.android.providers.contacts/.CallLogProvider}
+      - com.android.providers.contacts.VoicemailContentProvider
+        -> ContentProviderRecord{a5328250 u0 com.android.providers.contacts/.VoicemailContentProvider}
+      - com.android.providers.userdictionary.UserDictionaryProvider
+        -> ContentProviderRecord{a53283d0 u0 com.android.providers.userdictionary/.UserDictionaryProvider}
+      - com.android.providers.contacts.debug.DumpFileProvider
+        -> ContentProviderRecord{a53282e8 u0 com.android.providers.contacts/.debug.DumpFileProvider}
+      - com.android.providers.contacts.ContactsProvider2
+        -> ContentProviderRecord{a54daca0 u0 com.android.providers.contacts/.ContactsProvider2}
+    Receivers:
+      - ReceiverList{a582fab0 1535 android.process.acore/10002/u0 remote:a5573ad0}
+  *APP* UID 10005 ProcessRecord{a54ff5b0 1608:android.process.media/u0a5}
+    user #0 uid=10005
+    dir=/system/priv-app/DownloadProvider.apk publicDir=/system/priv-app/DownloadProvider.apk data=/data/data/com.android.providers.downloads
+    packageList={com.android.providers.media, com.android.providers.downloads}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a57c4b18
+    pid=1608 starting=false
+    lastActivityTime=-58s28ms lastPssTime=-27s407ms nextPssTime=+29m32s330ms
+    adjSeq=1776 lruSeq=0 lastPss=6440 lastCachedPss=6440
+    keeping=false cached=true empty=true
+    oom: max=16 curRaw=13 setRaw=13 cur=13 set=13
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=13 repProcState=13 pssProcState=13 setProcState=13 lastStateTime=-57s997ms
+    lastWakeTime=2632 timeUsed=0
+    lastCpuTime=0 timeUsed=0
+    lastRequestedGc=-2m3s675ms lastLowMemory=-2m3s675ms reportLowMemory=false
+    Published Providers:
+      - com.android.providers.downloads.DownloadStorageProvider
+        -> ContentProviderRecord{a54c9b98 u0 com.android.providers.downloads/.DownloadStorageProvider}
+      - com.android.providers.media.MediaDocumentsProvider
+        -> ContentProviderRecord{a54e5048 u0 com.android.providers.media/.MediaDocumentsProvider}
+      - com.android.providers.downloads.DownloadProvider
+        -> ContentProviderRecord{a557eb28 u0 com.android.providers.downloads/.DownloadProvider}
+      - com.android.providers.media.MediaProvider
+        -> ContentProviderRecord{a5583928 u0 com.android.providers.media/.MediaProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1608:android.process.media/u0a5 s1/1 u0/0 +1m57s626ms
+    Receivers:
+      - ReceiverList{a55eeb08 1608 android.process.media/10005/u0 remote:a55ee8f8}
+  *APP* UID 10007 ProcessRecord{a53e02a0 1810:com.google.process.gapps/u0a7}
+    user #0 uid=10007
+    dir=/system/app/GoogleContactsSyncAdapter.apk publicDir=/system/app/GoogleContactsSyncAdapter.apk data=/data/user/0/com.google.android.syncadapters.contacts
+    packageList={com.google.android.syncadapters.contacts, com.google.android.gms, com.google.android.gsf}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a55b15a0
+    pid=1810 starting=false
+    lastActivityTime=-20s712ms lastPssTime=-1m16s441ms nextPssTime=+13m43s555ms
+    adjSeq=1776 lruSeq=0 lastPss=10228 lastCachedPss=0
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+    curProcState=4 repProcState=4 pssProcState=4 setProcState=4 lastStateTime=-1m36s759ms
+    hasStartedServices=true
+    lastRequestedGc=-1m55s118ms lastLowMemory=-1m55s118ms reportLowMemory=false
+    Services:
+      - ServiceRecord{a54296c0 u0 com.google.android.gms/.gcm.http.GoogleHttpService}
+      - ServiceRecord{a54dcb38 u0 com.google.android.gms/.clearcut.service.ClearcutLoggerService}
+      - ServiceRecord{a55d3d08 u0 com.google.android.gms/.gcm.GcmService}
+      - ServiceRecord{a5619550 u0 com.google.android.gms/.playlog.service.PlayLogBrokerService}
+    Connections:
+      - ConnectionRecord{a53b7590 u0 CR ACT com.google.android.gms/.clearcut.service.ClearcutLoggerService:@a5337010}
+      - ConnectionRecord{a5657a60 u0 CR com.google.android.gms/.gcm.http.GoogleHttpService:@a544e038}
+      - ConnectionRecord{a58ae3c0 u0 CR ACT com.google.android.gms/.playlog.service.PlayLogBrokerService:@a58a24d0}
+    Published Providers:
+      - com.google.android.gsf.settings.GoogleSettingsProvider
+        -> ContentProviderRecord{a5368da8 u0 com.google.android.gsf/.settings.GoogleSettingsProvider}
+      - com.google.android.gsf.gservices.GservicesProvider
+        -> ContentProviderRecord{a53e1470 u0 com.google.android.gsf/.gservices.GservicesProvider}
+      - com.google.android.gsf.talk.TalkProvider
+        -> ContentProviderRecord{a52f17a8 u0 com.google.android.gsf/.talk.TalkProvider}
+      - com.google.android.syncadapters.contacts.GalProvider
+        -> ContentProviderRecord{a55ddad8 u0 com.google.android.syncadapters.contacts/.GalProvider}
+      - com.google.android.gsf.subscribedfeeds.SubscribedFeedsProvider
+        -> ContentProviderRecord{a5368e40 u0 com.google.android.gsf/.subscribedfeeds.SubscribedFeedsProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1810:com.google.process.gapps/u0a7 s1/1 u0/0 +1m53s421ms
+    Receivers:
+      - ReceiverList{a51a1238 1810 com.google.process.gapps/10007/u0 remote:a511abb0}
+      - ReceiverList{a52f8140 1810 com.google.process.gapps/10007/u0 remote:a584ffa8}
+      - ReceiverList{a530df68 1810 com.google.process.gapps/10007/u0 remote:a52bb0d0}
+      - ReceiverList{a55ab338 1810 com.google.process.gapps/10007/u0 remote:a54a4530}
+      - ReceiverList{a562c140 1810 com.google.process.gapps/10007/u0 remote:a506ec40}
+      - ReceiverList{a5852528 1810 com.google.process.gapps/10007/u0 remote:a57d9ed0}
+  *APP* UID 10030 ProcessRecord{a559dbb8 1497:com.google.android.inputmethod.latin/u0a30}
+    user #0 uid=10030
+    dir=/system/app/LatinImeGoogle.apk publicDir=/system/app/LatinImeGoogle.apk data=/data/data/com.google.android.inputmethod.latin
+    packageList={com.google.android.inputmethod.latin}
+    compat={480dpi}
+    thread=android.app.ApplicationThreadProxy@a55b99a0
+    pid=1497 starting=false
+    lastActivityTime=-15s955ms lastPssTime=-1m48s116ms nextPssTime=+13m11s880ms
+    adjSeq=1778 lruSeq=0 lastPss=6708 lastCachedPss=0
+    keeping=true cached=false empty=true
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=0
+    curProcState=3 repProcState=3 pssProcState=3 setProcState=3 lastStateTime=-2m8s277ms
+    hasShownUi=false pendingUiClean=true hasAboveClient=false
+    lastRequestedGc=-2m8s277ms lastLowMemory=-2m8s277ms reportLowMemory=false
+    Services:
+      - ServiceRecord{a5184f28 u0 com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME}
+      - ServiceRecord{a52acef0 u0 com.google.android.inputmethod.latin/com.android.inputmethod.latin.spellcheck.AndroidSpellCheckerService}
+    Published Providers:
+      - com.android.inputmethod.dictionarypack.DictionaryProvider
+        -> ContentProviderRecord{a53240e0 u0 com.google.android.inputmethod.latin/com.android.inputmethod.dictionarypack.DictionaryProvider}
+    Connected Providers:
+      - a589fad8/com.android.providers.settings/.SettingsProvider->1497:com.google.android.inputmethod.latin/u0a30 s1/1 u0/0 +2m4s513ms
+    Receivers:
+      - ReceiverList{a54c6b48 1497 com.google.android.inputmethod.latin/10030/u0 remote:a54be8d0}
+      - ReceiverList{a5859958 1497 com.google.android.inputmethod.latin/10030/u0 remote:a55d4558}
+
+  Process LRU list (sorted by oom_adj, 28 total, non-act at 2, non-svc at 2):
+    PERS #27: sys   F/ /P  trm: 0 1275:system/1000 (fixed)
+    PERS #26: pers  F/ /P  trm: 0 1381:com.android.systemui/u0a8 (fixed)
+    PERS #25: pers  F/ /P  trm: 0 1549:com.android.phone/1001 (fixed)
+    Proc # 2: fore  F/ /T  trm: 0 3005:com.android.quicksearchbox/u0a44 (provider)
+        com.android.quicksearchbox/.google.GoogleSuggestionProvider<=Proc{2814:com.android.browser/u0a15}
+    Proc # 0: fore  F/A/T  trm: 0 2814:com.android.browser/u0a15 (top-activity)
+    Proc #15: vis   F/ /IF trm: 0 1497:com.google.android.inputmethod.latin/u0a30 (service)
+        com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME<=Proc{1275:system/1000}
+    Proc # 5: vis   B/ /IB trm: 0 1763:com.google.android.gms/u0a7 (service)
+        com.google.android.gms/.analytics.service.AnalyticsService<=Proc{1514:com.google.process.location/u0a7}
+    Proc # 4: vis   B/ /IB trm: 0 1514:com.google.process.location/u0a7 (service)
+        com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService<=Proc{1275:system/1000}
+    Proc # 3: vis   B/ /IB trm: 0 1810:com.google.process.gapps/u0a7 (service)
+        com.google.android.gms/.gcm.http.GoogleHttpService<=Proc{1763:com.google.android.gms/u0a7}
+    Proc #20: prcp  F/S/IF trm: 0 2054:uci.uciproxy/u0a56 (fg-service)
+    Proc #13: svc   B/ /S  trm: 0 1945:com.google.android.gms.wearable/u0a7 (started-services)
+    Proc # 1: home  B/ /HO trm: 0 1680:com.android.launcher/u0a9 (home)
+    Proc # 7: cch   B/ /CE trm: 0 2112:com.android.providers.calendar/u0a1 (cch-empty)
+    Proc # 6: cch   B/ /CE trm: 0 1535:android.process.acore/u0a2 (cch-empty)
+    Proc # 9: cch+2 B/ /CE trm: 0 2214:com.android.mms/u0a10 (cch-empty)
+    Proc # 8: cch+2 B/ /CE trm: 0 2099:com.android.deskclock/u0a21 (cch-empty)
+    Proc #11: cch+4 B/ /CE trm: 0 1564:com.android.settings/1000 (cch-empty)
+    Proc #10: cch+4 B/ /CE trm: 0 1608:android.process.media/u0a5 (cch-empty)
+    Proc #24: cch+6 B/ /CE trm: 0 1705:com.android.externalstorage/u0a6 (cch-empty)
+    Proc #23: cch+6 B/ /CE trm: 0 1575:com.android.printspooler/u0a42 (cch-empty)
+    Proc #22: cch+6 B/ /CE trm: 0 1922:com.android.music/u0a35 (cch-empty)
+    Proc #21: cch+6 B/ /CE trm: 0 1880:com.google.android.gms.ui/u0a7 (cch-empty)
+    Proc #19: cch+6 B/ /CE trm: 0 2020:com.android.defcontainer/u0a3 (cch-empty)
+    Proc #18: cch+6 B/ /CE trm: 0 2162:com.android.dialer/u0a4 (cch-empty)
+    Proc #17: cch+6 B/ /CE trm: 0 1782:com.android.email/u0a25 (cch-empty)
+    Proc #16: cch+6 B/ /CE trm: 0 1721:com.android.exchange/u0a26 (cch-empty)
+    Proc #14: cch+6 B/ /CE trm: 0 2304:com.svox.pico/u0a40 (cch-empty)
+    Proc #12: cch+6 B/ /CE trm: 0 2078:com.android.calendar/u0a17 (cch-empty)
+
+  PID mappings:
+    PID #1275: ProcessRecord{a5306788 1275:system/1000}
+    PID #1381: ProcessRecord{a53a1f90 1381:com.android.systemui/u0a8}
+    PID #1497: ProcessRecord{a559dbb8 1497:com.google.android.inputmethod.latin/u0a30}
+    PID #1514: ProcessRecord{a58aa508 1514:com.google.process.location/u0a7}
+    PID #1535: ProcessRecord{a54daec8 1535:android.process.acore/u0a2}
+    PID #1549: ProcessRecord{a500af58 1549:com.android.phone/1001}
+    PID #1564: ProcessRecord{a54e7420 1564:com.android.settings/1000}
+    PID #1575: ProcessRecord{a5327330 1575:com.android.printspooler/u0a42}
+    PID #1608: ProcessRecord{a54ff5b0 1608:android.process.media/u0a5}
+    PID #1680: ProcessRecord{a54ee890 1680:com.android.launcher/u0a9}
+    PID #1705: ProcessRecord{a52aa268 1705:com.android.externalstorage/u0a6}
+    PID #1721: ProcessRecord{a530e6f8 1721:com.android.exchange/u0a26}
+    PID #1763: ProcessRecord{a538dcc8 1763:com.google.android.gms/u0a7}
+    PID #1782: ProcessRecord{a5850f30 1782:com.android.email/u0a25}
+    PID #1810: ProcessRecord{a53e02a0 1810:com.google.process.gapps/u0a7}
+    PID #1880: ProcessRecord{a500be48 1880:com.google.android.gms.ui/u0a7}
+    PID #1922: ProcessRecord{a5367ca8 1922:com.android.music/u0a35}
+    PID #1945: ProcessRecord{a5456320 1945:com.google.android.gms.wearable/u0a7}
+    PID #2020: ProcessRecord{a52fc2e0 2020:com.android.defcontainer/u0a3}
+    PID #2054: ProcessRecord{a52e1e80 2054:uci.uciproxy/u0a56}
+    PID #2078: ProcessRecord{a55cebc0 2078:com.android.calendar/u0a17}
+    PID #2099: ProcessRecord{a52aa698 2099:com.android.deskclock/u0a21}
+    PID #2112: ProcessRecord{a506b288 2112:com.android.providers.calendar/u0a1}
+    PID #2162: ProcessRecord{a52b0d08 2162:com.android.dialer/u0a4}
+    PID #2214: ProcessRecord{a52e3770 2214:com.android.mms/u0a10}
+    PID #2304: ProcessRecord{a5665330 2304:com.svox.pico/u0a40}
+    PID #2814: ProcessRecord{a53f58c0 2814:com.android.browser/u0a15}
+    PID #3005: ProcessRecord{a54400d8 3005:com.android.quicksearchbox/u0a44}
+
+  mStartedUsers:
+    User #0: mState=RUNNING
+  mStartedUserArray: [0]
+  mUserLru: [0]
+  mStartedUserArray: [0]
+  mHomeProcess: ProcessRecord{a54ee890 1680:com.android.launcher/u0a9}
+  mPreviousProcess: ProcessRecord{a52e1e80 2054:uci.uciproxy/u0a56}
+  mPreviousProcessVisibleTime: +42s448ms
+  mConfiguration: {1.0 310mcc260mnc en_US ldltr sw360dp w360dp h567dp 480dpi nrml port finger qwerty/v/v -nav/h s.5}
+  mConfigWillChange: false
+  Total persistent processes: 3
+  mStartRunning=true mProcessesReady=true mSystemReady=true
+  mBooting=false mBooted=true mFactoryTest=0
+  mLastPowerCheckRealtime=0
+  mLastPowerCheckUptime=0
+  mGoingToSleep=WakeLock{a50572e8 held=false, refCount=0}
+  mLaunchingActivity=WakeLock{a50574c8 held=false, refCount=0}
+  mAdjSeq=1778 mLruSeq=632
+  mNumNonCachedProcs=12 (28 total) mNumCachedHiddenProcs=0 mNumServiceProcs=1 mNewNumServiceProcs=1
+  mAllowLowerMemLevel=false mLastMemoryLevel0 mLastNumProcesses28
+  mLastIdleTime=+2m20s114ms mLowRamSinceLastIdle=0
