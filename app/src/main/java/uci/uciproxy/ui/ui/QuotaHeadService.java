@@ -134,7 +134,6 @@ public class QuotaHeadService extends Service {
         windowManager.addView(quotaHead, params);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         double usedQuota = intent.getDoubleExtra("USED_QUOTA", 0);
@@ -142,10 +141,20 @@ public class QuotaHeadService extends Service {
         double usedPercent = (usedQuota * 100) / quota;
         int theme = intent.getIntExtra("THEME", UCIntlmDialog.LIGHT_THEME);
         if (theme == UCIntlmDialog.LIGHT_THEME){
-            tvQuotaState.setBackground(getResources().getDrawable(R.drawable.light_box));
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN){
+                tvQuotaState.setBackgroundDrawable(getResources().getDrawable(R.drawable.light_box));
+            }
+            else{
+                tvQuotaState.setBackground(getResources().getDrawable(R.drawable.light_box));
+            }
         }
         else if (theme == UCIntlmDialog.DARK_THEME){
-            tvQuotaState.setBackground(getResources().getDrawable(R.drawable.dark_box));
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN){
+                tvQuotaState.setBackgroundDrawable(getResources().getDrawable(R.drawable.dark_box));
+            }
+            else{
+                tvQuotaState.setBackground(getResources().getDrawable(R.drawable.dark_box));
+            }
         }
 
 
@@ -183,20 +192,25 @@ public class QuotaHeadService extends Service {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void notifyit() {
         /*
          * Este método asegura que el servicio permanece en el área de notificación
 		 * */
-        Notification notification = new Notification.Builder(this)
+        Notification.Builder builder = new Notification.Builder(this)
                 .setContentTitle(getApplicationContext().getString(R.string.app_name))
                 .setSmallIcon(R.drawable.ic_bubble_notification)
                 .setContentText(getResources().getString(R.string.bubbleNotificationRunning))
-                .setWhen(System.currentTimeMillis())
-                .build();
+                .setWhen(System.currentTimeMillis());
+
+        Notification notification;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN){
+            notification = builder.getNotification();
+        }
+        else{
+            notification = builder.build();
+        }
 
         notification.flags |= Notification.FLAG_NO_CLEAR;
-        notification.priority = Notification.PRIORITY_MAX;
 
         startForeground(NOTIFICATION, notification);
     }

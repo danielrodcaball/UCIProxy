@@ -34,7 +34,7 @@ public class NTLMProxyService extends Service {
     private int inputport = 8080;
     private int outputport = 8080;
     private String bypass = "";
-//    private ServerTask s;
+    //    private ServerTask s;
     private HttpForwarder proxyThread;
     private boolean set_global_proxy;
 
@@ -121,7 +121,7 @@ public class NTLMProxyService extends Service {
         try {
             proxyThread = new HttpForwarder(server, inputport, domain, user, pass, outputport, true, bypass);
         } catch (IOException e) {
-            Log.e(getClass().getName(), "The proxy thread can not be started: "  + e.getMessage());
+            Log.e(getClass().getName(), "The proxy thread can not be started: " + e.getMessage());
             return START_NOT_STICKY;
         }
         executor.execute(proxyThread);
@@ -140,7 +140,6 @@ public class NTLMProxyService extends Service {
         return START_STICKY;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void notifyit() {
         /*
          * Este método asegura que el servicio permanece en el área de notificación
@@ -149,25 +148,24 @@ public class NTLMProxyService extends Service {
         Intent i = new Intent(this, UCIntlmDialog.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, i, 0);
-
-
-        Notification notification = new Notification.Builder(this)
+        Notification.Builder builder = new Notification.Builder(this)
                 .setContentTitle(getApplicationContext().getString(R.string.app_name))
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentText(getApplicationContext().getString(R.string.notif2) + " " + user)
                 .setWhen(System.currentTimeMillis())
-                .setContentIntent(contentIntent)
-                .build();
+                .setContentIntent(contentIntent);
+
+        Notification notification;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+            notification = builder.getNotification();
+        } else {
+            notification = builder.build();
+            notification.priority = Notification.PRIORITY_MAX;
+        }
 
         notification.flags |= Notification.FLAG_NO_CLEAR;
-        notification.priority = Notification.PRIORITY_MAX;
 
         startForeground(NOTIFICATION, notification);
     }
 
-    @Override
-    public void onTrimMemory(int level) {
-        Log.e(getClass().getName(), "onTrimMemory called");
-        super.onTrimMemory(level);
-    }
 }
