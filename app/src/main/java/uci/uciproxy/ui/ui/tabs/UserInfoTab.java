@@ -1,6 +1,7 @@
 package uci.uciproxy.ui.ui.tabs;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import uci.uciproxy.R;
+import uci.uciproxy.ui.Security.Encripter;
+import uci.uciproxy.ui.ui.fontAwesome.ButtonAwesome;
 
 /**
  * Created by daniel on 23/02/17.
@@ -27,7 +30,7 @@ public class UserInfoTab {
     public EditText pass;
     public TextView quotaStateTextView;
     public TextView assignedQuotaTextView;
-
+    public ButtonAwesome buttonClean;
 
     public UserInfoTab(Context context) {
         this.context = context;
@@ -42,9 +45,24 @@ public class UserInfoTab {
         checkBoxShowPassword = (CheckBox) rootView.findViewById(R.id.checkBoxPass);
         userLogo = (ImageView) rootView.findViewById(R.id.userLogo);
         nameTextView = (TextView) rootView.findViewById(R.id.nameTextView);
-//        startButton = (ToggleButton) rootView.findViewById(R.id.button1);
         username = (EditText) rootView.findViewById(R.id.euser);
         pass = (EditText) rootView.findViewById(R.id.epass);
         assignedQuotaTextView = (TextView) rootView.findViewById(R.id.assignedQuotaTextView);
+        buttonClean = (ButtonAwesome) rootView.findViewById(R.id.buttonClean);
+        buttonClean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences settings = context.getSharedPreferences("UCIntlm.conf",
+                        Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("user", "");
+                editor.putString("password","");
+                editor.putString("name","None");
+                editor.apply();
+                nameTextView.setText("None");
+                username.setText("");
+                pass.setText("");
+            }
+        });
     }
 }

@@ -157,7 +157,8 @@ public class UCIntlmDialog extends AppCompatActivity
             }
             alertDialog.setTitle(getResources().getString(R.string.createdBy));
             alertDialog.setMessage("Daniel A. Rodriguez Caballero" + "\n" +
-                    "Miguel Morciego Varona");
+                    "Miguel Morciego Varona\n" +
+                    "Reinier Suarez Estevez");
             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -216,6 +217,7 @@ public class UCIntlmDialog extends AppCompatActivity
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         userInfoTab = new UserInfoTab(this);
+        userInfoTab.buttonClean.setTextColor(iconsColor);
         preferencesTab = new PreferencesTab(this);
         notificationTab = new NotificationTab(this);
 
@@ -326,6 +328,7 @@ public class UCIntlmDialog extends AppCompatActivity
         //set the form to disable all fields and change the button to stop the service
         userInfoTab.username.setEnabled(false);
         userInfoTab.pass.setEnabled(false);
+        userInfoTab.buttonClean.setEnabled(false);
         preferencesTab.domain.setEnabled(false);
         preferencesTab.server.setEnabled(false);
         preferencesTab.inputport.setEnabled(false);
@@ -355,6 +358,7 @@ public class UCIntlmDialog extends AppCompatActivity
         //set the form to introduce data and start the service
         userInfoTab.username.setEnabled(true);
         userInfoTab.pass.setEnabled(true);
+        userInfoTab.buttonClean.setEnabled(true);
         preferencesTab.domain.setEnabled(true);
         preferencesTab.server.setEnabled(true);
         preferencesTab.inputport.setEnabled(true);

@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import uci.uciproxy.R;
 import uci.uciproxy.ui.ui.UCIntlmDialog;
+import uci.uciproxy.ui.ui.fontAwesome.ButtonAwesome;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
