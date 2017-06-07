@@ -110,17 +110,17 @@ public class QuotaHeadService extends Service {
                         params.gravity = Gravity.TOP | Gravity.LEFT;
                         params.y = offsetY;
                         params.x = offsetX;
-//                        if (offsetX <= pixelsDeviceWidth / 2) {
-//                            while (offsetX > 0) {
-//                                params.x = --offsetX;
-//                                windowManager.updateViewLayout(v, params);
-//                            }
-//                        } else {
-//                            while (offsetX < pixelsDeviceWidth) {
-//                                params.x = ++offsetX;
-//                                windowManager.updateViewLayout(v, params);
-//                            }
-//                        }
+                        if (offsetX <= pixelsDeviceWidth / 2) {
+                            while (offsetX > 0) {
+                                params.x = --offsetX;
+                                windowManager.updateViewLayout(v, params);
+                            }
+                        } else {
+                            while (offsetX < pixelsDeviceWidth) {
+                                params.x = ++offsetX;
+                                windowManager.updateViewLayout(v, params);
+                            }
+                        }
                         break;
                 }
                 return true;

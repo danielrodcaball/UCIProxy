@@ -28,7 +28,7 @@
             android:name=".ui.ui.UCIntlmDialog"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>
