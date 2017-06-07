@@ -104,7 +104,7 @@ public class HttpForwarder extends Thread {
                 listaSockets.add(s);
                 this.threadPool.execute(new Handler(s));
             } catch (IOException e) {
-                System.out.print(e.getMessage());
+                Log.e(getClass().getName(),e.getMessage());
             }
         }
     }

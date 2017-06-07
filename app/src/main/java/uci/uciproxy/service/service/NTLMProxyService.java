@@ -89,7 +89,7 @@ public class NTLMProxyService extends Service {
             android.os.Debug.waitForDebugger();
         }
 
-        if (intent.getExtras() == null) {
+        if (intent == null) {
             Log.e(getClass().getName(), "Error starting service");
         }
 
@@ -137,7 +137,7 @@ public class NTLMProxyService extends Service {
         //START_REDELIVER_INTENT permite que si el sistema mata el servicio entonces cuando intenta reiniciarlo envia el mismo Intent que se envio para
         //iniciarlo por primera vez
 //        return START_REDELIVER_INTENT;
-        return START_STICKY;
+        return START_REDELIVER_INTENT;
     }
 
     public void notifyit() {
