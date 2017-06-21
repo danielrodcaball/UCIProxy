@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">UCIProxy 1.0</string>
+    <string name="app_name">UCIProxy 1.2</string>
     <string name="description">Proxy ntlm para Android</string>
     <string name="action_settings">Configuración</string>
     <string name="user">Usuario</string>
