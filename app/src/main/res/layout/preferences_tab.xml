@@ -133,24 +133,37 @@
                 android:textSize="@dimen/text_size"
                 android:hint="@string/BypassHint" />
 
-            <TextView
-                android:id="@+id/appTheme"
+            <LinearLayout
+                android:id="@+id/styleLayout"
                 android:layout_below="@+id/ebypass"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textSize="@dimen/text_size"
-                android:text="@string/theme"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
 
-            <Spinner
+                <TextView
+                    android:id="@+id/appTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/theme"
+                    android:textSize="@dimen/text_size" />
+
+                <Spinner
+                    android:id="@+id/spinnerTheme"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/sAuthQuotaCheck"
+                android:layout_below="@+id/styleLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/spinnerTheme"
                 android:textSize="@dimen/text_size"
-                android:layout_below="@+id/appTheme"/>
-
+                android:text="@string/authQuotaServiceUse"/>
         </RelativeLayout>
 
     </ScrollView>

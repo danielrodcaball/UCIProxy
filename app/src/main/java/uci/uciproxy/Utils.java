@@ -9,6 +9,10 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.util.Log;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageSize;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -289,7 +293,21 @@ public class Utils {
         else
             return null;
     }
-/******************************************************************************/
 
+    /******************************************************************************/
+
+    public static Bitmap downloadImage(Context context, String url) {
+        ImageSize targetSize = new ImageSize(40, 40);
+//        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+//                .imageDownloader(new BaseImageDownloader(this, 5 * 1000, 20 * 1000))
+//                .build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context).build();
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        imageLoader.init(config);
+        imageLoader.handleSlowNetwork(true);
+        Log.e("url logo", url);
+        Bitmap img = imageLoader.loadImageSync(url, targetSize);
+        return img;
+    }
 
 }

@@ -41,6 +41,7 @@ public class PreferencesTab {
     public EditText bypass;
     public CheckBox globalCheckBox;
     public Spinner spinnerTheme;
+    public CheckBox sAuthQuotaCheck;
 
     //V21
     public Button wiffiSettingsButton;
@@ -88,6 +89,7 @@ public class PreferencesTab {
 
             }
         });
+        sAuthQuotaCheck = (CheckBox) rootView.findViewById(R.id.sAuthQuotaCheck);
     }
 
     private void loadUi21() {
@@ -137,18 +139,7 @@ public class PreferencesTab {
 
             }
         });
-    }
-
-    private void startProxySettingsActivity() {
-        Intent localIntent = new Intent("android.intent.action.MAIN");
-        Object[] arrayOfObject1 = new Object[1];
-        arrayOfObject1[0] = ("127.0.0.1:8080");
-        try {
-            context.startActivity(localIntent.putExtra("title", String.format("Establecer proxy del Sistema", arrayOfObject1)).putExtra("button-label", "Aceptar").setClassName("com.android.settings", "com.android.settings.ProxySelector"));
-        } catch (Exception e) {
-            Toast.makeText(context, context.getResources().getString(R.string.notFunctional), Toast.LENGTH_LONG).show();
-            e.fillInStackTrace();
-        }
+        sAuthQuotaCheck = (CheckBox) rootView.findViewById(R.id.sAuthQuotaCheck);
     }
 
     private AlertDialog createWifiAlertDialog(){

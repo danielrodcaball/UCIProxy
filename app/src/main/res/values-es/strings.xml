@@ -43,7 +43,7 @@
     <string name="notification">Notificación</string>
     <string name="toast">Toast</string>
     <string name="bubbleNotification">Burbuja de notificación</string>
-    <string name="theme">Tema de la aplicación</string>
+    <string name="theme">Tema de la aplicación:</string>
     <string name="light">Claro</string>
     <string name="dark">Oscuro</string>
     <string name="aboutUs">Acerca de</string>
@@ -56,5 +56,5 @@
     <string name="wifiSettingsPositiveButton">Ir a opciones de la Wi-fi</string>
     <string name="wifiSettingsNegativeButton">Cancelar</string>
     <string name="bubbleNotificationRunning">Burbuja de notificación ejecutandose</string>
-
+    <string name="authQuotaServiceUse">Usar servicios de quota y de autenticación</string>
 </resources>

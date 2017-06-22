@@ -136,8 +136,8 @@ public class QuotaHeadService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        double usedQuota = intent.getDoubleExtra("USED_QUOTA", 0);
-        double quota = intent.getDoubleExtra("QUOTA", 0);
+        float usedQuota = intent.getFloatExtra("USED_QUOTA", 0);
+        int quota = intent.getIntExtra("QUOTA", 0);
         double usedPercent = (usedQuota * 100) / quota;
         int theme = intent.getIntExtra("THEME", UCIntlmDialog.LIGHT_THEME);
         if (theme == UCIntlmDialog.LIGHT_THEME){
@@ -176,7 +176,7 @@ public class QuotaHeadService extends Service {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(UPDATE_QUOTA_STATE)) {
-                double usedQuotaPercent = intent.getDoubleExtra("USED_PERCENT", 0.0);
+                float usedQuotaPercent = intent.getFloatExtra("USED_PERCENT", 0);
                 Log.e("quota", usedQuotaPercent + "");
                 String usedQuotaPercentString = String.format("%.0f", usedQuotaPercent);
                 tvQuotaState.setText(usedQuotaPercentString + "%");

@@ -13,19 +13,21 @@
             android:layout_height="match_parent">
 
             <Button
+                android:id="@+id/wifiSettingsButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="@string/wifiSettings"
-                android:textSize="@dimen/text_size"
-                android:id="@+id/wifiSettingsButton"/>
+                android:textSize="@dimen/text_size" />
 
             <TextView
                 android:id="@+id/DomainTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/wifiSettingsButton"
-                android:textSize="@dimen/text_size"
-                android:text="@string/Domain" />
+                android:text="@string/Domain"
+                android:textSize="@dimen/text_size" />
 
             <EditText
                 android:id="@+id/edomain"
@@ -33,8 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/DomainTextView"
                 android:ems="10"
-                android:textSize="@dimen/text_size"
-                android:hint="@string/domainHint" />
+                android:hint="@string/domainHint"
+                android:textSize="@dimen/text_size" />
 
             <TextView
                 android:id="@+id/ServerTextView"
@@ -44,8 +46,8 @@
                 android:layout_alignStart="@+id/DomainTextView"
                 android:layout_below="@+id/DomainTextView"
                 android:layout_marginTop="42dp"
-                android:textSize="@dimen/text_size"
-                android:text="@string/Server" />
+                android:text="@string/Server"
+                android:textSize="@dimen/text_size" />
 
             <EditText
                 android:id="@+id/eserver"
@@ -57,8 +59,8 @@
                 android:layout_alignStart="@+id/edomain"
                 android:layout_below="@+id/ServerTextView"
                 android:ems="10"
-                android:textSize="@dimen/text_size"
-                android:hint="@string/serverHint" />
+                android:hint="@string/serverHint"
+                android:textSize="@dimen/text_size" />
 
             <TextView
                 android:id="@+id/InputPortTextView"
@@ -67,8 +69,8 @@
                 android:layout_alignLeft="@+id/DomainTextView"
                 android:layout_alignStart="@+id/DomainTextView"
                 android:layout_below="@+id/eserver"
-                android:textSize="@dimen/text_size"
-                android:text="@string/InputPort" />
+                android:text="@string/InputPort"
+                android:textSize="@dimen/text_size" />
 
             <EditText
                 android:id="@+id/einputport"
@@ -81,8 +83,8 @@
                 android:layout_below="@+id/InputPortTextView"
                 android:ems="10"
                 android:hint="@string/portHint"
-                android:textSize="@dimen/text_size"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned"
+                android:textSize="@dimen/text_size" />
 
             <TextView
                 android:id="@+id/OutputPortTextView"
@@ -91,8 +93,8 @@
                 android:layout_alignLeft="@+id/DomainTextView"
                 android:layout_alignStart="@+id/DomainTextView"
                 android:layout_below="@+id/einputport"
-                android:textSize="@dimen/text_size"
-                android:text="@string/OutputPort" />
+                android:text="@string/OutputPort"
+                android:textSize="@dimen/text_size" />
 
             <EditText
                 android:id="@+id/eoutputport"
@@ -105,8 +107,8 @@
                 android:layout_below="@+id/OutputPortTextView"
                 android:ems="10"
                 android:hint="@string/portHint"
-                android:textSize="@dimen/text_size"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned"
+                android:textSize="@dimen/text_size" />
 
 
             <TextView
@@ -116,8 +118,8 @@
                 android:layout_alignLeft="@+id/DomainTextView"
                 android:layout_alignStart="@+id/DomainTextView"
                 android:layout_below="@+id/eoutputport"
-                android:textSize="@dimen/text_size"
-                android:text="@string/Bypass" />
+                android:text="@string/Bypass"
+                android:textSize="@dimen/text_size" />
 
             <EditText
                 android:id="@+id/ebypass"
@@ -129,26 +131,41 @@
                 android:layout_alignStart="@+id/edomain"
                 android:layout_below="@+id/BypassTextView"
                 android:ems="10"
-                android:textSize="@dimen/text_size"
-                android:hint="@string/BypassHint" />
+                android:hint="@string/BypassHint"
+                android:textSize="@dimen/text_size" />
 
-            <TextView
-                android:id="@+id/appTheme"
+            <LinearLayout
+                android:id="@+id/styleLayout"
                 android:layout_below="@+id/ebypass"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textSize="@dimen/text_size"
-                android:text="@string/theme"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
 
-            <Spinner
+                <TextView
+                    android:id="@+id/appTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/theme"
+                    android:textSize="@dimen/text_size" />
+
+                <Spinner
+                    android:id="@+id/spinnerTheme"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/sAuthQuotaCheck"
+                android:layout_below="@+id/styleLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
                 android:textSize="@dimen/text_size"
-                android:id="@+id/spinnerTheme"
-                android:layout_below="@+id/appTheme"/>
+                android:text="@string/authQuotaServiceUse"/>
+
 
         </RelativeLayout>
 

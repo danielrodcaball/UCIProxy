@@ -14,6 +14,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -52,7 +53,9 @@ import uci.uciproxy.ui.ui.fontAwesome.DrawableAwesome;
 import uci.uciproxy.ui.ui.tabs.NotificationTab;
 import uci.uciproxy.ui.ui.tabs.PreferencesTab;
 import uci.uciproxy.ui.ui.tabs.UserInfoTab;
-import uci.uciproxy.user.User;
+import uci.uciproxy.model.QuotaDataService;
+import uci.uciproxy.model.User;
+import uci.uciproxy.model.UserDataService;
 
 public class UCIntlmDialog extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -82,6 +85,7 @@ public class UCIntlmDialog extends AppCompatActivity
         chargeTheme();
         setContentView(R.layout.app_bar_main);
         initUi();
+        user = User.loadUser(this);
         loadConf();
         quotaUpdateReceiver = new QuotaUpdateReceiver();
 
@@ -248,25 +252,17 @@ public class UCIntlmDialog extends AppCompatActivity
         });
     }
 
+
     private void loadConf() {
         SharedPreferences settings = getSharedPreferences("UCIntlm.conf",
                 Context.MODE_PRIVATE);
-        user = new User(settings.getString("user", ""), Encripter.decrypt(settings.getString("password", "")));
-        user.name = settings.getString("name", "");
-        user.usedQuota = Integer.parseInt(settings.getString("usedQuota", "0"));
-        user.quota = Integer.parseInt(settings.getString("quota", "0"));
+
         userInfoTab.username.setText(user.username);
         userInfoTab.pass.setText(user.password);
         userInfoTab.nameTextView.setText(user.name);
         userInfoTab.quotaStateTextView.setText(String.valueOf((int) user.usedQuota));
         userInfoTab.assignedQuotaTextView.setText(String.valueOf((int) user.quota));
-        String userLogo = user.username + "Logo";
-        String logoPath = settings.getString(userLogo, "");
-        if (!logoPath.equals("")) {
-            Bitmap bm = Utils.loadPictureInFile(logoPath);
-            user.logo = bm;
-            userInfoTab.userLogo.setImageBitmap(user.logo);
-        }
+        userInfoTab.userLogo.setImageBitmap(user.logo);
 
         preferencesTab.domain.setText(settings.getString("domain", "uci.cu"));
         preferencesTab.server.setText(settings.getString("server", "10.0.0.1"));
@@ -279,6 +275,8 @@ public class UCIntlmDialog extends AppCompatActivity
         }
 
         preferencesTab.spinnerTheme.setSelection(themeId);
+        preferencesTab.sAuthQuotaCheck.setChecked(settings.getBoolean("authQuotaServiceUse", true));
+
         if (userInfoTab.username.getText().toString().equals("")) {
             userInfoTab.username.requestFocus();
         } else {
@@ -300,9 +298,15 @@ public class UCIntlmDialog extends AppCompatActivity
         editor.putString("user", user.username);
         editor.putString("password",
                 Encripter.encrypt(user.password));
-        editor.putString("quota", String.format("%.0f", user.quota));
-        editor.putString("usedQuota", String.format("%.0f", user.usedQuota));
+        editor.putInt("quota", user.quota);
+        editor.putFloat("usedQuota", user.usedQuota);
+        editor.putString("navigationLevel", user.navigationLevel);
         editor.putString("name", user.name);
+        if (user.logo != null) {
+            String logoPath = getApplicationContext().getFilesDir() + File.separator + user.username + ".png";
+            editor.putString(user.username + "Logo", logoPath);
+            Utils.savePictureInFile(logoPath, user.logo);
+        }
 
         editor.putString("domain", preferencesTab.domain.getText().toString());
         editor.putString("server", preferencesTab.server.getText().toString());
@@ -313,6 +317,7 @@ public class UCIntlmDialog extends AppCompatActivity
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             editor.putBoolean("global_proxy", ((CheckBox) preferencesTab.globalCheckBox).isChecked());
         }
+        editor.putBoolean("authQuotaServiceUse", preferencesTab.sAuthQuotaCheck.isChecked());
 
         editor.putInt("notificationDelay", Integer.parseInt(notificationTab.notificationsDelay.getText().toString()));
         editor.putBoolean("notificationToast", notificationTab.toastCheck.isChecked());
@@ -340,8 +345,7 @@ public class UCIntlmDialog extends AppCompatActivity
         } else {
             preferencesTab.wiffiSettingsButton.setEnabled(false);
         }
-
-        //TODO: falta para cuando es mayor que LOLLIPOP
+        preferencesTab.sAuthQuotaCheck.setEnabled(false);
 
         fab.setImageDrawable(new DrawableAwesome(R.string.fa_stop, 35, Color.WHITE, false, false, 0, 0, 0, 0, this));
 
@@ -371,6 +375,8 @@ public class UCIntlmDialog extends AppCompatActivity
             preferencesTab.wiffiSettingsButton.setEnabled(true);
         }
 
+        preferencesTab.sAuthQuotaCheck.setEnabled(true);
+
         fab.setImageDrawable(new DrawableAwesome(R.string.fa_play, 35, Color.WHITE, false, false, 0, 0, 0, 0, this));
 
         //se habilitan los elementos visuales relativos a la consulta de cuota
@@ -398,15 +404,18 @@ public class UCIntlmDialog extends AppCompatActivity
         }
 
         if (!isNTLMProxyServiceRunning(this)) {
-            if(notificationTab.notificationsDelay.getText().toString().equals("0")){
+            if (notificationTab.notificationsDelay.getText().toString().equals("0")) {
                 notificationTab.notificationsDelay.setText("1");
             }
 
             user.username = userInfoTab.username.getText().toString();
             user.password = userInfoTab.pass.getText().toString();
-            UserUpdater userUpdater = new UserUpdater();
-            userUpdater.execute();
-
+            if (preferencesTab.sAuthQuotaCheck.isChecked()) {
+                UserUpdater userUpdater = new UserUpdater(true);
+                userUpdater.execute();
+            } else {
+                completeTask();
+            }
 
         } else {
             Intent proxyIntent = new Intent(this, NTLMProxyService.class);
@@ -425,19 +434,7 @@ public class UCIntlmDialog extends AppCompatActivity
         }
     }
 
-    public void taskComplete() {
-        if (user.networkError) {
-            Toast.makeText(getApplicationContext(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
-            fab.setImageDrawable(new DrawableAwesome(R.string.fa_play, 35, Color.WHITE, false, false, 0, 0, 0, 0, this));
-            return;
-        }
-
-        if (!user.authenticated) {
-            Toast.makeText(getApplicationContext(), getString(R.string.credentialsError), Toast.LENGTH_LONG).show();
-            fab.setImageDrawable(new DrawableAwesome(R.string.fa_play, 35, Color.WHITE, false, false, 0, 0, 0, 0, this));
-            return;
-        }
-
+    public void completeTask() {
         Intent proxyIntent = new Intent(this, NTLMProxyService.class);
         Intent quotaHeadServiceIntent = new Intent(this, QuotaHeadService.class);
 
@@ -450,9 +447,6 @@ public class UCIntlmDialog extends AppCompatActivity
         proxyIntent.putExtra("server", preferencesTab.server.getText().toString());
         proxyIntent.putExtra("inputport", preferencesTab.inputport.getText().toString());
         proxyIntent.putExtra("outputport", preferencesTab.outputport.getText().toString());
-        proxyIntent.putExtra("notificationToast", notificationTab.toastCheck.isChecked());
-        proxyIntent.putExtra("notificationBubble", notificationTab.bubbleCheck.isChecked());
-        proxyIntent.putExtra("notificationNotification", notificationTab.notificationCheck.isChecked());
         proxyIntent.putExtra("delay", Integer.parseInt(notificationTab.notificationsDelay.getText().toString()) * 60);
         proxyIntent.putExtra("bypass", preferencesTab.bypass.getText().toString());
 
@@ -462,14 +456,19 @@ public class UCIntlmDialog extends AppCompatActivity
             proxyIntent.putExtra("set_global_proxy", false);
         }
 
-        startService(proxyIntent);
-        if (notificationTab.bubbleCheck.isChecked()) {
-            quotaHeadServiceIntent.putExtra("USED_QUOTA", user.usedQuota);
-            quotaHeadServiceIntent.putExtra("QUOTA", user.quota);
-            quotaHeadServiceIntent.putExtra("THEME", themeId);
-            startService(quotaHeadServiceIntent);
+        if (preferencesTab.sAuthQuotaCheck.isChecked()) {
+            proxyIntent.putExtra("notificationToast", notificationTab.toastCheck.isChecked());
+            proxyIntent.putExtra("notificationBubble", notificationTab.bubbleCheck.isChecked());
+            proxyIntent.putExtra("notificationNotification", notificationTab.notificationCheck.isChecked());
+            if (notificationTab.bubbleCheck.isChecked()) {
+                quotaHeadServiceIntent.putExtra("USED_QUOTA", user.usedQuota);
+                quotaHeadServiceIntent.putExtra("QUOTA", user.quota);
+                quotaHeadServiceIntent.putExtra("THEME", themeId);
+                startService(quotaHeadServiceIntent);
+            }
         }
 
+        startService(proxyIntent);
         disableAll();
 
 //        UCIntlmWidget.actualizarWidget(this.getApplicationContext(),
@@ -482,7 +481,7 @@ public class UCIntlmDialog extends AppCompatActivity
         userInfoTab.userLogo.setImageBitmap(user.logo);
         userInfoTab.nameTextView.setText(user.name);
         userInfoTab.quotaStateTextView.setText(String.format("%.0f", user.usedQuota));
-        userInfoTab.assignedQuotaTextView.setText(String.format("%.0f", user.quota));
+        userInfoTab.assignedQuotaTextView.setText(user.quota + "");
     }
 
     public void clickShowPassword(View arg0) {
@@ -502,7 +501,7 @@ public class UCIntlmDialog extends AppCompatActivity
         public void onReceive(Context context, Intent intent) {
             Log.e("broad", "asd");
             if (intent.getAction().equals(UPDATE_QUOTA_STATE)) {
-                double usedQuota = intent.getDoubleExtra("USED_QUOTA", 0.0);
+                float usedQuota = intent.getFloatExtra("USED_QUOTA", 0);
                 updateQuotaView(usedQuota);
             }
         }
@@ -518,6 +517,14 @@ public class UCIntlmDialog extends AppCompatActivity
                 new ProgressDialog(new ContextThemeWrapper(UCIntlmDialog.this, R.style.ProgressBarCustom)) :
                 new ProgressDialog(UCIntlmDialog.this);
 
+        private boolean sAuthQuotaUse;
+        private boolean networkError = false;
+        private boolean authenticationError = false;
+
+        public UserUpdater(boolean sAuthQuotaUse) {
+            this.sAuthQuotaUse = sAuthQuotaUse;
+        }
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -530,46 +537,56 @@ public class UCIntlmDialog extends AppCompatActivity
             if (dialog.isShowing()) {
                 dialog.dismiss();
             }
-            taskComplete();
+            if (networkError) {
+                Toast.makeText(getApplicationContext(), getString(R.string.networkError), Toast.LENGTH_LONG).show();
+                fab.setImageDrawable(new DrawableAwesome(R.string.fa_play, 35, Color.WHITE, false, false, 0, 0, 0, 0, getApplicationContext()));
+            } else if (authenticationError) {
+                Toast.makeText(getApplicationContext(), getString(R.string.credentialsError), Toast.LENGTH_LONG).show();
+                fab.setImageDrawable(new DrawableAwesome(R.string.fa_play, 35, Color.WHITE, false, false, 0, 0, 0, 0, getApplicationContext()));
+            } else {
+                completeTask();
+            }
         }
 
         @Override
         protected Object doInBackground(Object[] params) {
             try {
                 Utils.enableSSLSocket();
-                user.update();
-                if (user.authenticated) {
-                    SharedPreferences settings = getSharedPreferences("UCIntlm.conf",
-                            Context.MODE_PRIVATE);
-                    String logoPath = settings.getString(user.username + "Logo", "");
-                    if (logoPath.equals("")) {
-                        user.downloadLogo(getApplicationContext());
-                        if (user.logo != null) {
-                            logoPath = getApplicationContext().getFilesDir() + File.separator + user.username + ".png";
-                            Editor editor = settings.edit();
-                            editor.putString(user.username + "Logo", logoPath);
-                            editor.commit();
-                            Utils.savePictureInFile(logoPath, user.logo);
+                if (sAuthQuotaUse) {
+                    UserDataService userDataService = UserDataService.getUserData(user.username, user.password);
+                    if (userDataService.isAuthenticate) {
+                        user.name = userDataService.name;
+                        Bitmap logo = User.findUserLogo(getApplicationContext(), user.username);
+                        if (logo == null) {
+                            logo = Utils.downloadImage(getApplicationContext(), userDataService.logoUrl);
                         }
+                        if (logo == null){
+                            logo = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.no_photo);
+                        }
+                        user.logo = logo;
+                        QuotaDataService quotaDataService = QuotaDataService.getQuotaData(user.username, user.password);
+                        user.quota = quotaDataService.quota;
+                        user.usedQuota = quotaDataService.usedQuota;
+                        user.navigationLevel = quotaDataService.navigationLevel;
                     } else {
-                        user.logo = Utils.loadPictureInFile(logoPath);
+                        authenticationError = true;
                     }
                 }
             } catch (IOException e1) {
-                user.networkError = true;
-                Log.e("IOException", e1.getMessage());
-                return e1;
+                Log.e(getClass().getName(), e1.getMessage());
+                networkError = true;
             } catch (NetworkErrorException e) {
-                user.networkError = true;
-                Log.e("NetworkErrorException", e.getMessage());
-                e.printStackTrace();
-                return e;
+                Log.e(getClass().getName(), e.getMessage());
+                networkError = true;
             } catch (XmlPullParserException e1) {
-                e1.printStackTrace();
+                Log.e(getClass().getName(), e1.getMessage());
+                networkError = true;
             } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
+                Log.e(getClass().getName(), e.getMessage());
+                networkError = true;
             } catch (KeyManagementException e) {
-                e.printStackTrace();
+                Log.e(getClass().getName(), e.getMessage());
+                networkError = true;
             }
             return null;
         }

@@ -56,4 +56,5 @@
     <string name="wifiSettingsPositiveButton">Go to Wi-fi settings</string>
     <string name="wifiSettingsNegativeButton">Cancel</string>
     <string name="bubbleNotificationRunning">Bubble Notification Running</string>
+    <string name="authQuotaServiceUse">Use quota and authentication services</string>
 </resources>

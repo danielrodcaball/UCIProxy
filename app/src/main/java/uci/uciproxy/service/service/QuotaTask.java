@@ -19,8 +19,9 @@ import java.security.NoSuchAlgorithmException;
 
 import uci.uciproxy.R;
 import uci.uciproxy.Utils;
+import uci.uciproxy.model.QuotaDataService;
 import uci.uciproxy.ui.ui.UCIntlmDialog;
-import uci.uciproxy.user.User;
+import uci.uciproxy.model.User;
 
 /**
  * Created by daniel on 17/12/16.
@@ -28,15 +29,16 @@ import uci.uciproxy.user.User;
 public class QuotaTask implements Runnable {
 
     private Context context;
-    private User user;
+    private String username;
+    private String password;
     private int notificationNumber = 1;
     boolean notificationToast;
     boolean notificationNotification;
 
     public QuotaTask(Context context, String user, String pass, boolean notificationToast, boolean notificationNotification) {
         this.context = context;
-        this.user = new User(user, pass);
-        this.user.authenticated = true;
+        this.username = user;
+        this.password = pass;
         this.notificationToast = notificationToast;
         this.notificationNotification = notificationNotification;
     }
@@ -46,48 +48,44 @@ public class QuotaTask implements Runnable {
         try {
             Log.i(getClass().getName(), "starting quota service");
             Utils.enableSSLSocket();
-            user.updateQuotaData();
-            double usedCuota = user.usedQuota;
-            saveQuotaState(usedCuota);
+            QuotaDataService quotaDataService = QuotaDataService.getQuotaData(username, password);
+            float usedCuota = quotaDataService.usedQuota;
+            saveQuotaState(quotaDataService);
             showMessage(String.format("%.0f", usedCuota) + " " + context.getString(R.string.quotaSpent));
-            double usedPercent = (usedCuota * 100) / user.quota;
+            float usedPercent = (usedCuota * 100) / quotaDataService.quota;
             Intent i = new Intent(UCIntlmDialog.UPDATE_QUOTA_STATE);
             i.putExtra("USED_QUOTA", usedCuota);
-            i.putExtra("QUOTA", user.quota);
-            i.putExtra("NAVIGATION_LEVEL", user.navigationLevel);
+            i.putExtra("QUOTA", quotaDataService.quota);
+            i.putExtra("NAVIGATION_LEVEL", quotaDataService.navigationLevel);
             i.putExtra("USED_PERCENT", usedPercent);
             context.sendBroadcast(i);
 
         } catch (IOException e) {
             showMessage(context.getString(R.string.networkError));
-//            e.printStackTrace();
-            Log.d("network error", e.getMessage());
+            Log.e(getClass().getName(), e.getMessage());
         } catch (XmlPullParserException e) {
             showMessage(context.getString(R.string.networkError));
-//            e.printStackTrace();
-            Log.d("network error", e.getMessage());
-        } catch (SecurityException e){
+            Log.e(getClass().getName(), e.getMessage());
+        } catch (SecurityException e) {
             showMessage(context.getString(R.string.credentialsError));
-//            e.printStackTrace();
-            Log.d("network error", e.getMessage());
-        }
-        catch (NoSuchAlgorithmException e) {
-//            e.printStackTrace();
+            Log.e(getClass().getName(), e.getMessage());
+        } catch (NoSuchAlgorithmException e) {
+            Log.e(getClass().getName(), e.getMessage());
         } catch (KeyManagementException e) {
-//            e.printStackTrace();
-        }
-        catch (NetworkErrorException e) {
+            Log.e(getClass().getName(), e.getMessage());
+        } catch (NetworkErrorException e) {
             showMessage(context.getString(R.string.networkError));
-//            e.printStackTrace();
-            Log.d("network error", e.getMessage());
+            Log.e(getClass().getName(), e.getMessage());
         }
     }
 
-    private void saveQuotaState(double usedQuota){
+    private void saveQuotaState(QuotaDataService quotaDataService) {
         SharedPreferences settings = context.getSharedPreferences("UCIntlm.conf",
                 Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("usedQuota",String.format("%.0f", usedQuota));
+        editor.putInt("quota", quotaDataService.quota);
+        editor.putFloat("usedQuota", quotaDataService.usedQuota);
+        editor.putString("navigationLevel", quotaDataService.navigationLevel);
         editor.apply();
     }
 
