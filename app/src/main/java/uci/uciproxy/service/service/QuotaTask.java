@@ -51,8 +51,8 @@ public class QuotaTask implements Runnable {
             QuotaDataService quotaDataService = QuotaDataService.getQuotaData(username, password);
             float usedCuota = quotaDataService.usedQuota;
             saveQuotaState(quotaDataService);
-            showMessage(String.format("%.0f", usedCuota) + " " + context.getString(R.string.quotaSpent));
             float usedPercent = (usedCuota * 100) / quotaDataService.quota;
+            showMessage(String.format("%.0f", usedPercent) + " " + context.getString(R.string.quotaSpent));
             Intent i = new Intent(UCIntlmDialog.UPDATE_QUOTA_STATE);
             i.putExtra("USED_QUOTA", usedCuota);
             i.putExtra("QUOTA", quotaDataService.quota);

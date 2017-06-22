@@ -34,7 +34,7 @@
     <string name="GlobalProxy">Set as global proxy</string>
     <string name="Notifications">Notifications</string>
     <string name="delayTime">delay time (min):</string>
-    <string name="quotaSpent">% spent</string>
+    <string name="quotaSpent">% consumed</string>
     <string name="networkError">Network Error</string>
     <string name="spending">Spending</string>
     <string name="credentialsError">Credentials Error</string>
